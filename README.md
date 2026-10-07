@@ -24,11 +24,11 @@ A personagem é uma ilustração SVG animada, desenhada para este projeto. Não 
 
 ## Personalizar
 
-- `index.html`: nome, apresentação, projetos e contactos. Não foram inventados anos de experiência, resultados, qualificações ou contactos privados.
+- `index.html`: dados de Paula Rodrigues, seis projetos, formação, experiência, competências e contactos, adaptados do portefólio https://paularodrigues.onrender.com.
 - `styles.css`: cores, tipos de letra, composição e animações.
 - `app.js`: seguimento do cursor e cumprimento.
 
-O contacto aponta para o perfil GitHub; adicionar email, LinkedIn e CV quando forem fornecidos. Os projetos em desenvolvimento estão identificados e nenhum dado clínico foi incluído. O Google Fonts é opcional: sem rede são usadas as fontes locais de fallback.
+Os contactos incluem email público, LinkedIn e GitHub. As imagens dos seis projetos são servidas pelo portefólio anterior e dependem da disponibilidade desse alojamento. Nenhum dado clínico foi incluído. O Google Fonts é opcional: sem rede são usadas as fontes locais de fallback.
 
 ## GitHub Pages
 
