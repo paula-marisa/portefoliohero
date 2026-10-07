@@ -33,3 +33,15 @@ Os contactos incluem email público, LinkedIn e GitHub. As imagens dos seis proj
 ## GitHub Pages
 
 Em Settings → Pages, selecionar Deploy from a branch, a branch `main` e a pasta `/ (root)`. Os três ficheiros do site podem ser servidos diretamente por qualquer alojamento estático. Esta configuração de alojamento não foi ativada automaticamente.
+
+
+## Experiência profissional e interativa
+
+- Filtros Web, Dados e Aplicações com contagem de resultados.
+- Detalhes de projeto em diálogo nativo, fecho com Escape e reposição do foco.
+- Menu móvel, indicação de secção ativa e progresso de leitura.
+- Tema claro/escuro com preferência guardada no navegador, quando disponível.
+- Contacto direto por email e botão de cópia com alternativa para contextos sem Clipboard API.
+- Suporte a teclado, foco visível e movimento reduzido.
+
+Validação: sintaxe JavaScript, estrutura HTML e testes das interações com DOM simulado (filtros, menu, preferência de tema, diálogo e foco). Não foi feita verificação visual num navegador nesta atualização.

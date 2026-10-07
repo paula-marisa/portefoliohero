@@ -42,3 +42,109 @@ reducedMotion.addEventListener('change', () => {
   head.style.transform = '';
   pupils.style.transform = '';
 });
+
+// Accessible navigation, project exploration and user preferences.
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#main-nav');
+function closeMenu() { navigation.classList.remove('is-open'); menuButton.setAttribute('aria-expanded', 'false'); }
+menuButton.addEventListener('click', () => {
+  const expanded = menuButton.getAttribute('aria-expanded') !== 'true';
+  menuButton.setAttribute('aria-expanded', String(expanded));
+  navigation.classList.toggle('is-open', expanded);
+});
+navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+window.matchMedia('(min-width: 701px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
+const themeButton = document.querySelector('#theme-toggle');
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  themeButton.setAttribute('aria-label', theme === 'light' ? 'Ativar tema escuro' : 'Ativar tema claro');
+  themeButton.textContent = theme === 'light' ? '☾' : '☼';
+}
+let savedTheme;
+try { savedTheme = localStorage.getItem('paula-theme'); } catch {}
+applyTheme(savedTheme === 'light' ? 'light' : 'dark');
+themeButton.addEventListener('click', () => {
+  const theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  applyTheme(theme);
+  try { localStorage.setItem('paula-theme', theme); } catch {}
+});
+const projectCards = [...document.querySelectorAll('.project')];
+const filterButtons = [...document.querySelectorAll('[data-filter]')];
+filterButtons.forEach(button => button.addEventListener('click', () => {
+  filterButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  let visible = 0;
+  projectCards.forEach(card => {
+    card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter;
+    if (!card.hidden) visible++;
+  });
+  document.querySelector('#project-count').textContent = `${visible} ${visible === 1 ? 'projeto' : 'projetos'}`;
+}));
+const projectDialog = document.querySelector('#project-dialog');
+let lastProjectTrigger;
+function openProject(card, trigger) {
+  const image = card.querySelector('img');
+  document.querySelector('#dialog-title').textContent = card.querySelector('h3').textContent;
+  document.querySelector('#dialog-category').textContent = card.querySelector('.project-meta').textContent;
+  document.querySelector('#dialog-description').textContent = card.querySelector('p').textContent;
+  document.querySelector('#dialog-tech').textContent = card.querySelector('.technology').textContent;
+  const dialogImage = document.querySelector('#dialog-image');
+  dialogImage.src = image.src;
+  dialogImage.alt = image.alt;
+  const links = document.querySelector('#dialog-links');
+  links.replaceChildren(...[...card.querySelectorAll('.project-links a')].map(link => link.cloneNode(true)));
+  lastProjectTrigger = trigger;
+  projectDialog.showModal();
+  document.body.classList.add('dialog-open');
+}
+projectCards.forEach(card => {
+  const button = card.querySelector('.project-detail');
+  button.setAttribute('aria-label', `Explorar ${card.querySelector('h3').textContent}`);
+  button.addEventListener('click', () => openProject(card, button));
+  card.addEventListener('keydown', event => {
+    if (event.target === card && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault(); openProject(card, card);
+    }
+  });
+});
+projectDialog.querySelector('.dialog-close').addEventListener('click', () => projectDialog.close());
+projectDialog.addEventListener('click', event => {
+  const rect = projectDialog.getBoundingClientRect();
+  if (event.target === projectDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) projectDialog.close();
+});
+projectDialog.addEventListener('close', () => {
+  document.body.classList.remove('dialog-open');
+  lastProjectTrigger?.focus();
+});
+const copyButton = document.querySelector('#copy-email');
+copyButton.addEventListener('click', async () => {
+  const status = document.querySelector('#copy-status');
+  try {
+    await navigator.clipboard.writeText('paulamsr@hotmail.com');
+    status.textContent = 'Email copiado.';
+  } catch { status.textContent = 'Seleciona e copia o email apresentado acima.'; }
+});
+let scrollFrame = 0;
+function updateProgress() {
+  const range = document.documentElement.scrollHeight - window.innerHeight;
+  document.querySelector('.reading-progress').style.width = `${range > 0 ? Math.min(100, window.scrollY / range * 100) : 0}%`;
+  scrollFrame = 0;
+}
+window.addEventListener('scroll', () => { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateProgress); }, { passive: true });
+window.addEventListener('resize', updateProgress);
+updateProgress();
+if ('IntersectionObserver' in window) {
+  const activeSections = new Map();
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => activeSections.set(entry.target.id, entry.isIntersecting));
+    const current = [...activeSections].find(([, visible]) => visible)?.[0];
+    navigation.querySelectorAll('a').forEach(link => {
+      const active = link.hash === `#${current}`;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
+    });
+  }, { rootMargin: '-15% 0px -60% 0px' });
+  document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
+}
+document.querySelector('.hero .button').addEventListener('pointerenter', () => scene.classList.add('pointing'));
+document.querySelector('.hero .button').addEventListener('pointerleave', () => scene.classList.remove('pointing'));
