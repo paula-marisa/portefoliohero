@@ -165,48 +165,45 @@ let language = 'pt';
 function translate(text) { return language === 'en' ? (english[text] ?? text) : text; }
 function projectCountText(count) { return language === 'en' ? `${count} ${count === 1 ? 'project' : 'projects'}` : `${count} ${count === 1 ? 'projeto' : 'projetos'}`; }
 const scene = document.querySelector('#scene');
-const head = document.querySelector('#head');
-const pupils = document.querySelector('#pupils');
+const character = document.querySelector('#character');
 const greet = document.querySelector('#greet');
 const greeting = document.querySelector('#greeting');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-let frame = 0;
 let timer;
 let lastAutoGreeting = 0;
+let lastDirection = 'right';
+function setPose(pose) { character.dataset.pose = pose; }
 function sayHello() {
   scene.classList.add('greeting');
+  greet.setAttribute('aria-pressed', 'true');
   greeting.textContent = translate('Olá! Que bom ver-te por aqui.');
+  setPose('greeting');
   clearTimeout(timer);
-  timer = setTimeout(() => scene.classList.remove('greeting'), 3000);
+  timer = setTimeout(() => {
+    scene.classList.remove('greeting');
+    greet.setAttribute('aria-pressed', 'false');
+    setPose(lastDirection);
+  }, 3500);
 }
+greet.setAttribute('aria-pressed', 'false');
 greet.addEventListener('click', sayHello);
-scene.addEventListener('pointermove', (event) => {
+scene.addEventListener('pointermove', event => {
   if (reducedMotion.matches || event.pointerType === 'touch') return;
-  if (frame) cancelAnimationFrame(frame);
-  const { clientX, clientY } = event;
-  frame = requestAnimationFrame(() => {
-    const rect = scene.getBoundingClientRect();
-    const x = Math.max(-1, Math.min(1, (clientX - rect.left - rect.width / 2) / (rect.width / 2)));
-    const y = Math.max(-1, Math.min(1, (clientY - rect.top - rect.height / 2) / (rect.height / 2)));
-    head.style.transform = `translate(${x * 7}px, ${y * 3}px) rotate(${x * 5}deg)`;
-    pupils.style.transform = `translate(${x * 5}px, ${y * 3}px)`;
-    if (Math.abs(x) < .15 && Math.abs(y) < .3 && Date.now() - lastAutoGreeting > 7000) {
-      lastAutoGreeting = Date.now();
-      sayHello();
-    }
-    frame = 0;
-  });
+  const rect = character.getBoundingClientRect();
+  const x = (event.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+  if (Math.abs(x) > .18) {
+    lastDirection = x < 0 ? 'left' : 'right';
+    if (!scene.classList.contains('greeting')) setPose(lastDirection);
+  } else if (event.clientY >= rect.top && event.clientY <= rect.bottom && Date.now() - lastAutoGreeting > 8000) {
+    lastAutoGreeting = Date.now();
+    sayHello();
+  }
 });
 scene.addEventListener('pointerleave', () => {
-  cancelAnimationFrame(frame);
-  frame = 0;
-  head.style.transform = '';
-  pupils.style.transform = '';
+  lastDirection = 'right';
+  if (!scene.classList.contains('greeting')) setPose('right');
 });
-reducedMotion.addEventListener('change', () => {
-  head.style.transform = '';
-  pupils.style.transform = '';
-});
+reducedMotion.addEventListener('change', () => { if (!scene.classList.contains('greeting')) setPose('right'); });
 
 // Accessible navigation, project exploration and user preferences.
 const menuButton = document.querySelector('.menu-toggle');
