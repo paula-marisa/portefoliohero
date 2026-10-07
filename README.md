@@ -1,47 +1,38 @@
-# Paula — Portefólio interativo
+# Paula Rodrigues — Portefólio
 
-Portefólio em português de Portugal, inspirado na ideia de um hero com personagem interativa. Design original em azul suave, carvão e branco, adaptado à ligação entre informática e ciência.
+Portefólio pessoal em português de Portugal e inglês simples, com a assinatura **paula.**. Inclui seis projetos, competências, formação, experiência profissional e contactos.
 
-## Executar
+## Abrir no computador
 
-Sem instalação nem compilação. Abre `index.html` no navegador, ou executa:
+Abrir `index.html` no navegador ou usar a extensão Live Server do VS Code. Não são necessários Python, instalação de dependências ou compilação.
 
-```sh
-python3 -m http.server 8080
-```
+## Funcionalidades
 
-Depois abre http://localhost:8080.
+- Seletor PT / EN: conteúdo, descrições, etiquetas acessíveis, detalhes dos projetos e mensagens dinâmicas.
+- Idioma guardado no navegador, quando o armazenamento está disponível. `?lang=en` e `?lang=pt` permitem escolher o idioma ao abrir a página. Português por predefinição.
+- Assinatura **paula.**, temas claro e escuro e navegação móvel.
+- Filtros de projetos e diálogo de detalhes com gestão do foco.
+- Quadro interativo com três perspetivas: interfaces, dados e rigor. Navegação por teclado com setas, Home e End.
+- Formação relevante no próprio portefólio, com listas expansíveis de cursos e certificações.
+- Contacto por email, cópia do endereço, LinkedIn e GitHub.
+- Movimento reduzido e foco visível.
 
-## Interações
+## Ficheiros
 
-- A cabeça e os olhos acompanham o cursor dentro da cena.
-- Ao passar pelo centro, a personagem cumprimenta e baixa os auscultadores.
-- O botão «Diz-me olá» funciona com rato, toque e teclado.
-- Preferências de movimento reduzido são respeitadas.
-- Secções Sobre, Projetos, Competências e Contacto, com navegação por âncoras.
+- `index.html`: dados e estrutura em português.
+- `app.js`: tradução inglesa, preferências e interações.
+- `styles.css`: desenho, temas e adaptação a ecrãs diferentes.
+- `assets/`: imagens WebP dos projetos, guardadas neste repositório.
+- `favicon.svg`: assinatura visual.
 
-A personagem é uma ilustração SVG animada, desenhada para este projeto. Não é um modelo 3D nem um vídeo fotorealista. Para aproximar o acabamento do Reel, pode ser substituída por um modelo 3D com rig ou por vídeos com câmara fixa e diferentes estados de animação.
+Os dados foram adaptados do portefólio fornecido pela utilizadora. Os nomes oficiais dos projetos, instituições, tecnologias e cursos mantêm-se. Não foram acrescentados resultados, métricas ou cargos que não estivessem documentados. A personagem é uma ilustração SVG animada.
 
-## Personalizar
+O Google Fonts é opcional: sem ligação são usadas fontes locais. As imagens e a informação de formação não dependem do portefólio anterior. As ligações externas levam ao código, às demonstrações, ao GitHub e ao LinkedIn.
 
-- `index.html`: dados de Paula Rodrigues, seis projetos, formação, experiência, competências e contactos, adaptados do portefólio https://paularodrigues.onrender.com.
-- `styles.css`: cores, tipos de letra, composição e animações.
-- `app.js`: seguimento do cursor e cumprimento.
+## Publicação
 
-Os contactos incluem email público, LinkedIn e GitHub. As imagens dos seis projetos são servidas pelo portefólio anterior e dependem da disponibilidade desse alojamento. Nenhum dado clínico foi incluído. O Google Fonts é opcional: sem rede são usadas as fontes locais de fallback.
+Em GitHub Settings → Pages, escolher Deploy from a branch, `main` e `/ (root)`. O projeto pode ser servido por qualquer alojamento estático.
 
-## GitHub Pages
+## Validação desta versão
 
-Em Settings → Pages, selecionar Deploy from a branch, a branch `main` e a pasta `/ (root)`. Os três ficheiros do site podem ser servidos diretamente por qualquer alojamento estático. Esta configuração de alojamento não foi ativada automaticamente.
-
-
-## Experiência profissional e interativa
-
-- Filtros Web, Dados e Aplicações com contagem de resultados.
-- Detalhes de projeto em diálogo nativo, fecho com Escape e reposição do foco.
-- Menu móvel, indicação de secção ativa e progresso de leitura.
-- Tema claro/escuro com preferência guardada no navegador, quando disponível.
-- Contacto direto por email e botão de cópia com alternativa para contextos sem Clipboard API.
-- Suporte a teclado, foco visível e movimento reduzido.
-
-Validação: sintaxe JavaScript, estrutura HTML e testes das interações com DOM simulado (filtros, menu, preferência de tema, diálogo e foco). Não foi feita verificação visual num navegador nesta atualização.
+Verificada a sintaxe JavaScript, a estrutura HTML, os destinos da navegação, a cobertura das traduções e a existência dos recursos locais. Testes com DOM simulado verificaram a mudança entre os dois idiomas, a preferência guardada, as etiquetas acessíveis, a contagem de projetos, a atualização de um diálogo aberto e o funcionamento do quadro por teclado. Não foi feita validação visual num navegador nesta atualização.
