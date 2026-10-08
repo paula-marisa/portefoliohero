@@ -159,7 +159,60 @@ const english = {
   "Captura de ecrã do projeto triggo.ai — Data Engineering Challenge": "Screenshot of triggo.ai — Data Engineering Challenge",
   "Explorar triggo.ai — Data Engineering Challenge": "Explore triggo.ai — Data Engineering Challenge",
   "Captura de ecrã do projeto weather_app": "Screenshot of weather_app",
-  "Explorar weather_app": "Explore weather_app"
+  "Explorar weather_app": "Explore weather_app",
+  "Portefólio de Paula Rodrigues — informática, análises clínicas e projetos pessoais.": "Paula Rodrigues's portfolio — computing, clinical laboratory work and personal projects.",
+  "Paula Rodrigues — Informática & Saúde": "Paula Rodrigues — Computing & Healthcare",
+  "Projetos académicos e pessoais de Paula Rodrigues, entre a informática e a saúde.": "Paula Rodrigues's academic and personal projects, connecting computing and healthcare.",
+  "Informática · Saúde · Curiosidade": "Computing · Healthcare · Curiosity",
+  "Do laboratório": "From the laboratory",
+  "ao código.": "to code.",
+  "Gosto de perceber o problema antes de construir a solução. Entre a saúde e a informática, encontro novas formas de pensar, experimentar e aprender.": "I like to understand a problem before building a solution. Healthcare and computing give me new ways to think, try things and learn.",
+  "CURIOSIDADE · RIGOR · CRIATIVIDADE": "CURIOSITY · CARE · CREATIVITY",
+  "Sou a Paula Rodrigues. O que liga o meu percurso é a vontade de perceber, aprender e fazer melhor.": "I'm Paula Rodrigues. What connects my background is the wish to understand, learn and do things better.",
+  "Na faculdade, descobri interesse por várias áreas da informática. Hoje, continuo a explorar diferentes desafios através de projetos académicos e pessoais, com curiosidade e vontade de encontrar o meu caminho.": "At university, I became interested in several areas of computing. I keep exploring different challenges through academic and personal projects, with curiosity and a wish to find my path.",
+  "Informática": "Computing",
+  "Resolução de problemas": "Problem solving",
+  "Aprendizagem contínua": "Ongoing learning",
+  "Problemas que despertam curiosidade": "Problems that spark curiosity",
+  "Gosto de explorar problemas diferentes e de perceber como as várias peças de um sistema se ligam. Cada projeto é uma oportunidade para experimentar ferramentas e formas de pensar.": "I like exploring different problems and understanding how the parts of a system connect. Each project is a chance to try tools and new ways of thinking.",
+  "02 / EXPLORAÇÃO": "02 / EXPLORATION",
+  "Perguntar. Experimentar. Aprender.": "Ask. Try. Learn.",
+  "Paula Rodrigues · Curiosidade que se transforma em projetos.": "Paula Rodrigues · Curiosity turned into projects.",
+  "Ferramentas para": "Tools to",
+  "continuar a explorar.": "keep exploring.",
+  "Gerir uma frota de robôs e drones e organizar os pedidos de tarefas num protótipo académico.": "Manage a fleet of robots and drones and organise task requests in an academic prototype.",
+  "Um sistema com gestão de dispositivos, pedidos de tarefas e planeamento. Alguns módulos foram desenvolvidos parcialmente.": "A system for device management, task requests and planning. Some modules were only partly developed.",
+  "A ligação entre diferentes módulos e tecnologias, desde a interface à lógica de execução.": "How different modules and technologies connect, from the interface to the task logic.",
+  "Apresentar os resultados de um sistema de aprendizagem federada de forma clara.": "Show the results of a federated learning system clearly.",
+  "Um dashboard académico para visualizar métricas e comparar os nós participantes.": "An academic dashboard for viewing metrics and comparing participating nodes.",
+  "A relação entre comunicação, visualização e organização da informação numa aplicação.": "How communication, visualisation and information structure work together in an app.",
+  "Criar um espaço pessoal para apresentar o meu percurso e os meus projetos.": "Create a personal space to share my background and projects.",
+  "Um portefólio com vários idiomas, formulário e integração com Firebase, publicado na Vercel.": "A portfolio with several languages, a form and Firebase, hosted on Vercel.",
+  "A ligação entre apresentação, interação e publicação de uma aplicação web.": "How presentation, interaction and publishing connect in a web app.",
+  "Explorar uma mascote digital capaz de responder às ações do utilizador.": "Explore a digital mascot that responds to user actions.",
+  "Uma aplicação em fase inicial com Electron, JavaScript e Node.js.": "An early-stage app using Electron, JavaScript and Node.js.",
+  "Eventos DOM e gestão de estado através de uma experiência lúdica.": "DOM events and state management through a playful experience.",
+  "Explorar um conjunto público de dados de comércio eletrónico num desafio técnico.": "Explore public e-commerce data as part of a technical challenge.",
+  "Um projeto em Python com limpeza, modelação, análise exploratória, dashboards e modelos preditivos.": "A Python project with cleaning, modelling, exploratory analysis, dashboards and prediction models.",
+  "As diferentes etapas de preparação e análise da informação e a sua apresentação visual.": "The steps involved in preparing and analysing information and showing it visually.",
+  "Criar uma aplicação móvel simples para consultar o estado do tempo.": "Build a simple mobile app to check the weather.",
+  "Uma aplicação em Flutter que apresenta a temperatura e as condições meteorológicas.": "A Flutter app showing the temperature and weather conditions.",
+  "O desenvolvimento de interfaces móveis com Flutter e Dart, num projeto em fase inicial.": "Mobile interface development with Flutter and Dart in an early-stage project.",
+  "O desafio": "The challenge",
+  "O que desenvolvi": "What I built",
+  "O que explorei": "What I explored",
+  "PARA ALÉM DO CÓDIGO": "BEYOND CODE",
+  "Também sou feita": "Life beyond",
+  "de pequenas pausas.": "the screen.",
+  "Outros interesses que fazem": "Other interests that are",
+  "parte de quem sou.": "part of who I am.",
+  "Música": "Music",
+  "Uma companhia para desligar, ganhar energia e mudar o ritmo do dia.": "A way to relax, find energy and change the pace of the day.",
+  "Cinema": "Films",
+  "Gosto de descobrir histórias e de ver o mundo através de outras perspetivas.": "I like discovering stories and seeing the world from other points of view.",
+  "Jogos": "Games",
+  "Um espaço para explorar, enfrentar desafios e deixar a curiosidade guiar-me.": "A space to explore, face challenges and follow my curiosity.",
+  "O meu percurso continua a ganhar forma. A curiosidade é o ponto de partida.": "My path is still taking shape. Curiosity is where it starts."
 };
 let language = 'pt';
 function translate(text) { return language === 'en' ? (english[text] ?? text) : text; }
@@ -254,12 +307,25 @@ filterButtons.forEach(button => button.addEventListener('click', () => {
 }));
 const projectDialog = document.querySelector('#project-dialog');
 let lastProjectTrigger;
+const projectStories = [["Gerir uma frota de robôs e drones e organizar os pedidos de tarefas num protótipo académico.","Um sistema com gestão de dispositivos, pedidos de tarefas e planeamento. Alguns módulos foram desenvolvidos parcialmente.","A ligação entre diferentes módulos e tecnologias, desde a interface à lógica de execução."],["Apresentar os resultados de um sistema de aprendizagem federada de forma clara.","Um dashboard académico para visualizar métricas e comparar os nós participantes.","A relação entre comunicação, visualização e organização da informação numa aplicação."],["Criar um espaço pessoal para apresentar o meu percurso e os meus projetos.","Um portefólio com vários idiomas, formulário e integração com Firebase, publicado na Vercel.","A ligação entre apresentação, interação e publicação de uma aplicação web."],["Explorar uma mascote digital capaz de responder às ações do utilizador.","Uma aplicação em fase inicial com Electron, JavaScript e Node.js.","Eventos DOM e gestão de estado através de uma experiência lúdica."],["Explorar um conjunto público de dados de comércio eletrónico num desafio técnico.","Um projeto em Python com limpeza, modelação, análise exploratória, dashboards e modelos preditivos.","As diferentes etapas de preparação e análise da informação e a sua apresentação visual."],["Criar uma aplicação móvel simples para consultar o estado do tempo.","Uma aplicação em Flutter que apresenta a temperatura e as condições meteorológicas.","O desenvolvimento de interfaces móveis com Flutter e Dart, num projeto em fase inicial."]];
 function openProject(card, trigger) {
   const image = card.querySelector('img');
   document.querySelector('#dialog-title').textContent = card.querySelector('h3').textContent;
   document.querySelector('#dialog-category').textContent = card.querySelector('.project-meta').textContent;
   document.querySelector('#dialog-description').textContent = card.querySelector('p').textContent;
   document.querySelector('#dialog-tech').textContent = card.querySelector('.technology').textContent;
+  const storyContainer = document.querySelector('#dialog-story');
+  storyContainer.replaceChildren();
+  const story = projectStories[Number(card.dataset.story)];
+  if (story) ['O desafio', 'O que desenvolvi', 'O que explorei'].forEach((label, index) => {
+    const section = document.createElement('section');
+    const heading = document.createElement('h3');
+    const paragraph = document.createElement('p');
+    heading.textContent = translate(label);
+    paragraph.textContent = translate(story[index]);
+    section.append(heading, paragraph);
+    storyContainer.append(section);
+  });
   const dialogImage = document.querySelector('#dialog-image');
   dialogImage.src = image.src;
   dialogImage.alt = image.alt;
