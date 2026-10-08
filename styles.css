@@ -36,3 +36,42 @@ html[data-theme=light] .cert-grid .cert-card{background:linear-gradient(140deg,#
 html[data-theme=light] .cert-card::before{background:radial-gradient(260px circle at var(--shine-x,30%) var(--shine-y,20%),#83b9c733,transparent 75%)}
 @media(max-width:600px){.cert-grid .cert-card{padding:24px}.cert-icon{width:40px;height:40px;margin-bottom:15px}}
 @media(prefers-reduced-motion:reduce){.cert-grid .cert-card:hover{transform:none}.cert-grid .cert-card,.cert-card::before{transition:none}}
+
+/* Shared elegant cards for the interactive focus section. */
+.focus-section{background:linear-gradient(135deg,#8fbac808,transparent 80%)}
+.focus-board{border:0;border-radius:0;overflow:visible;gap:25px;background:transparent}
+.focus-tabs{border:0;padding:0;gap:15px}
+.focus-tabs .focus-card{position:relative;isolation:isolate;overflow:hidden;border:1px solid #668e9e44;border-radius:17px;padding:23px 20px;background:linear-gradient(145deg,#87bacd12,var(--panel) 65%);box-shadow:0 12px 30px #00000012;transition:border-color .25s,transform .25s,box-shadow .25s}
+.focus-tabs .focus-card[aria-selected=true]{background:linear-gradient(135deg,#a9d9e21b,var(--panel) 75%);border-color:#a4d5e480;color:var(--text);box-shadow:0 0 24px #8ac2d012,inset 3px 0 var(--accent)}
+.focus-tabs .focus-card:hover{transform:translateY(-2px);border-color:#a4d5e480}
+.focus-tabs .focus-card:hover::before,.focus-tabs .focus-card[aria-selected=true]::before{opacity:1}
+.focus-content.cert-card{position:relative;isolation:isolate;overflow:hidden;border:1px solid #668e9e44;border-radius:20px;background:linear-gradient(145deg,#87bacd10,var(--panel) 75%);box-shadow:0 15px 35px #00000012;min-width:0}
+.focus-content .tags span{background:#91bac80a}
+.focus-icon{box-shadow:inset 0 1px #d8f5ff18;background:linear-gradient(145deg,#b8dce322,#7199ad08)}
+/* A complete light palette: cool white, soft blue and slate. */
+html[data-theme=light]{--bg:#f5f7fa;--panel:#ffffff;--text:#233541;--muted:#536876;--accent:#426d82;--line:#d5e1e8;--header:#f5f7faee;color-scheme:light}
+html[data-theme=light] .hero{background:radial-gradient(ellipse at 80% 40%,#e4eff680,transparent 60%)}
+html[data-theme=light] .scene .orb{background:radial-gradient(ellipse at 40% 30%,#fdfefe,#e1eef5 55%,#d2e3ed 95%);border-color:#c8dde8;box-shadow:0 0 65px #8ebbd422}
+html[data-theme=light] .floating{background:#ffffffef;border-color:#d1e2ed;color:#426d82;box-shadow:0 8px 25px #4d819414}
+html[data-theme=light] .bubble{background:#e2edf4;color:#294b5d;border:1px solid #c8dce8;box-shadow:0 8px 25px #4d819412}
+html[data-theme=light] .greet-button{background:#fff;color:var(--text);border-color:#c8dce8}
+html[data-theme=light] .greet-button[aria-pressed=true]{background:#426d82;color:#fff;border-color:#426d82}
+html[data-theme=light] .button{background:#426d82;color:#fff}
+html[data-theme=light] .button:hover{background:#345b70;color:#fff}
+html[data-theme=light] .nav-contact{background:#fff;border-color:#cfdee6}
+html[data-theme=light] .project-art{background:#edf3f7;border-color:#d3e1e9}
+html[data-theme=light] .tags span{background:#edf3f7;border-color:#d1e0e8;color:#426070}
+html[data-theme=light] .filters{background:#fff;border-color:#d1dfe8}
+html[data-theme=light] .filters button[aria-pressed=true],html[data-theme=light] .language-switch button[aria-pressed=true]{background:#426d82;color:#fff}
+html[data-theme=light] .focus-section{background:linear-gradient(135deg,#eaf2f8aa,#f5f7fa 75%)}
+html[data-theme=light] .focus-tabs .focus-card,html[data-theme=light] .focus-content.cert-card,html[data-theme=light] .cert-grid .cert-card{background:linear-gradient(145deg,#ffffff,#eef5f9);border-color:#cfdee8;box-shadow:0 10px 25px #355e7510}
+html[data-theme=light] .focus-tabs .focus-card[aria-selected=true]{background:linear-gradient(135deg,#e6f0f7,#f9fcfe);border-color:#87aebf;box-shadow:inset 3px 0 #426d82,0 8px 24px #426d8212}
+html[data-theme=light] .focus-tabs .focus-card:hover,html[data-theme=light] .cert-grid .cert-card:hover{border-color:#94b6c8;box-shadow:0 12px 26px #426d821a}
+html[data-theme=light] .focus-icon,html[data-theme=light] .cert-icon{background:linear-gradient(145deg,#e5f0f7,#f3f8fb);color:#426d82;border-color:#ccdee8;box-shadow:inset 0 1px #fff}
+html[data-theme=light] .cert-card::before{background:radial-gradient(260px circle at var(--shine-x,30%) var(--shine-y,20%),#b7d8ee40,transparent 75%)}
+html[data-theme=light] .contact{background:radial-gradient(ellipse at bottom,#dcebf5bb,transparent 75%)}
+html[data-theme=light] .dialog-close{background:#eaf2f7;color:#233541}
+html[data-theme=light] .timeline-item::before{box-shadow:0 0 0 4px #e8f1f7}
+html[data-theme=light] .email-row button:hover{background:#e8f1f7;color:#294b5d}
+@media(max-width:800px){.focus-board{gap:18px}.focus-tabs{padding:0;border-bottom:0}.focus-tabs .focus-card{padding:18px}.focus-content.cert-card{padding:27px}}
+@media(prefers-reduced-motion:reduce){.focus-tabs .focus-card:hover{transform:none}.focus-tabs .focus-card{transition:none}}
