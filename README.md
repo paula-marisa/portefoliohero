@@ -43,3 +43,8 @@ Verificada a sintaxe JavaScript, a estrutura HTML, os destinos da navegação, a
 `assets/paula-cartoon-poses-v2.webp` contém três poses com transparência. O cursor escolhe a direção do olhar; o centro e o botão ativam o cumprimento. As transições respeitam movimento reduzido. A imagem foi gerada com a ferramenta integrada a partir do pedido: personagem inspirada na referência, estilo de desenho animado fofo, olhos expressivos, cabelo castanho comprido, auscultadores azul-bebé e três poses com câmara fixa. Na terceira pose, o braço direito está levantado para cumprimentar e a mão esquerda repousa junto ao portátil; sem mãos adicionais. A transparência foi preservada na conversão WebP.
 
 Validação: sintaxe JavaScript, transparência e integridade do recurso, e testes com DOM simulado para esquerda/direita, cumprimento, reposição da pose e movimento reduzido. A integração visual no navegador não foi verificada nesta atualização.
+
+
+### Pose inicial de trabalho
+
+A personagem começa na pose `idle`, de frente e concentrada no portátil, sem cumprimento. Só muda a direção com `pointermove` sobre a personagem e regressa à pose inicial em `pointerleave`. O cumprimento é ativado pelo botão. A pose adicional `assets/paula-cartoon-idle.webp` foi gerada com a mesma referência, auscultadores colocados e sem acenar. Foram testados o início neutro, as direções, o centro sem cumprimento automático, o regresso ao trabalho, o botão e o movimento reduzido.

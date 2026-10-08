@@ -170,8 +170,7 @@ const greet = document.querySelector('#greet');
 const greeting = document.querySelector('#greeting');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let timer;
-let lastAutoGreeting = 0;
-let lastDirection = 'right';
+let lastDirection = 'idle';
 function setPose(pose) { character.dataset.pose = pose; }
 function sayHello() {
   scene.classList.add('greeting');
@@ -185,26 +184,24 @@ function sayHello() {
     setPose(lastDirection);
   }, 3500);
 }
+setPose('idle');
 greet.setAttribute('aria-pressed', 'false');
 greet.addEventListener('click', sayHello);
-scene.addEventListener('pointermove', event => {
+character.addEventListener('pointermove', event => {
   if (reducedMotion.matches || event.pointerType === 'touch') return;
   const rect = character.getBoundingClientRect();
   const x = (event.clientX - rect.left - rect.width / 2) / (rect.width / 2);
-  if (Math.abs(x) > .18) {
-    lastDirection = x < 0 ? 'left' : 'right';
-    if (!scene.classList.contains('greeting')) setPose(lastDirection);
-  } else if (event.clientY >= rect.top && event.clientY <= rect.bottom && Date.now() - lastAutoGreeting > 8000) {
-    lastAutoGreeting = Date.now();
-    sayHello();
-  }
+  lastDirection = Math.abs(x) <= .18 ? 'idle' : x < 0 ? 'left' : 'right';
+  if (!scene.classList.contains('greeting')) setPose(lastDirection);
 });
-scene.addEventListener('pointerleave', () => {
-  lastDirection = 'right';
-  if (!scene.classList.contains('greeting')) setPose('right');
+character.addEventListener('pointerleave', () => {
+  lastDirection = 'idle';
+  if (!scene.classList.contains('greeting')) setPose('idle');
 });
-reducedMotion.addEventListener('change', () => { if (!scene.classList.contains('greeting')) setPose('right'); });
-
+reducedMotion.addEventListener('change', () => {
+  lastDirection = 'idle';
+  if (!scene.classList.contains('greeting')) setPose('idle');
+});
 // Accessible navigation, project exploration and user preferences.
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#main-nav');
