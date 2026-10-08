@@ -45,6 +45,11 @@ Verificada a sintaxe JavaScript, a estrutura HTML, os destinos da navegação, a
 Validação: sintaxe JavaScript, transparência e integridade do recurso, e testes com DOM simulado para esquerda/direita, cumprimento, reposição da pose e movimento reduzido. A integração visual no navegador não foi verificada nesta atualização.
 
 
-### Pose inicial de trabalho
 
-A personagem começa na pose `idle`, de frente e concentrada no portátil, sem cumprimento. Só muda a direção com `pointermove` sobre a personagem e regressa à pose inicial em `pointerleave`. O cumprimento é ativado pelo botão. A pose adicional `assets/paula-cartoon-idle.webp` foi gerada com a mesma referência, auscultadores colocados e sem acenar. Foram testados o início neutro, as direções, o centro sem cumprimento automático, o regresso ao trabalho, o botão e o movimento reduzido.
+### Cumprimento e reação ao rato
+
+A pose por predefinição é o cumprimento. O movimento do rato é captado em toda a página: à esquerda muda o olhar para a esquerda, à direita para a direita e na zona central mostra o olá. Ao sair da janela volta ao cumprimento. O botão mantém o olá durante 3,5 segundos. O movimento reduzido mantém a pose de cumprimento. A pose de trabalho foi retirada da interface.
+
+Os quatro quadros de formação têm ícones, fundos com cor suave e um brilho discreto que acompanha o rato dentro de cada quadro. Os textos PT/EN mantêm-se.
+
+Validação: sintaxe JavaScript e testes com DOM simulado da pose inicial, movimento em toda a página, centro, prioridade do botão, saída da janela e movimento reduzido. A apresentação visual no navegador não foi verificada nesta atualização.

@@ -170,38 +170,51 @@ const greet = document.querySelector('#greet');
 const greeting = document.querySelector('#greeting');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let timer;
-let lastDirection = 'idle';
-function setPose(pose) { character.dataset.pose = pose; }
+let pointerFrame = 0;
+let requestedPose = 'greeting';
+let greetingPinned = false;
+function setPose(pose) {
+  character.dataset.pose = pose;
+  const isGreeting = pose === 'greeting';
+  scene.classList.toggle('greeting', isGreeting);
+  greet.setAttribute('aria-pressed', String(isGreeting));
+  if (isGreeting) greeting.textContent = translate('Olá! Que bom ver-te por aqui.');
+}
 function sayHello() {
-  scene.classList.add('greeting');
-  greet.setAttribute('aria-pressed', 'true');
-  greeting.textContent = translate('Olá! Que bom ver-te por aqui.');
-  setPose('greeting');
+  greetingPinned = true;
   clearTimeout(timer);
+  setPose('greeting');
   timer = setTimeout(() => {
-    scene.classList.remove('greeting');
-    greet.setAttribute('aria-pressed', 'false');
-    setPose(lastDirection);
+    greetingPinned = false;
+    setPose(reducedMotion.matches ? 'greeting' : requestedPose);
   }, 3500);
 }
-setPose('idle');
-greet.setAttribute('aria-pressed', 'false');
+setPose('greeting');
 greet.addEventListener('click', sayHello);
-character.addEventListener('pointermove', event => {
+document.addEventListener('pointermove', event => {
   if (reducedMotion.matches || event.pointerType === 'touch') return;
-  const rect = character.getBoundingClientRect();
-  const x = (event.clientX - rect.left - rect.width / 2) / (rect.width / 2);
-  lastDirection = Math.abs(x) <= .18 ? 'idle' : x < 0 ? 'left' : 'right';
-  if (!scene.classList.contains('greeting')) setPose(lastDirection);
-});
-character.addEventListener('pointerleave', () => {
-  lastDirection = 'idle';
-  if (!scene.classList.contains('greeting')) setPose('idle');
+  const position = event.clientX / Math.max(1, window.innerWidth);
+  requestedPose = position < .43 ? 'left' : position > .57 ? 'right' : 'greeting';
+  if (!pointerFrame) pointerFrame = requestAnimationFrame(() => {
+    pointerFrame = 0;
+    if (!greetingPinned) setPose(requestedPose);
+  });
+}, { passive: true });
+document.addEventListener('pointerout', event => {
+  if (event.relatedTarget === null) {
+    if (pointerFrame) cancelAnimationFrame(pointerFrame);
+    pointerFrame = 0;
+    requestedPose = 'greeting';
+    if (!greetingPinned) setPose('greeting');
+  }
 });
 reducedMotion.addEventListener('change', () => {
-  lastDirection = 'idle';
-  if (!scene.classList.contains('greeting')) setPose('idle');
+  if (pointerFrame) cancelAnimationFrame(pointerFrame);
+  pointerFrame = 0;
+  requestedPose = 'greeting';
+  setPose('greeting');
 });
+
 // Accessible navigation, project exploration and user preferences.
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#main-nav');
@@ -377,3 +390,13 @@ focusTabs.forEach((tab, index) => {
 document.querySelectorAll('[data-project-filter]').forEach(link => link.addEventListener('click', () => {
   document.querySelector(`[data-filter="${link.dataset.projectFilter}"]`)?.click();
 }));
+
+/* Subtle local highlight follows pointer inside training cards. */
+document.querySelectorAll('.cert-card').forEach(card => {
+  card.addEventListener('pointermove', event => {
+    if (reducedMotion.matches || event.pointerType === 'touch') return;
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--shine-x', `${event.clientX - rect.left}px`);
+    card.style.setProperty('--shine-y', `${event.clientY - rect.top}px`);
+  }, { passive: true });
+});
