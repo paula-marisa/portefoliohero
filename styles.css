@@ -122,3 +122,14 @@ html[data-theme=light] .email-row button:hover{background:#e8f1f7;color:#294b5d}
 .journey-course details li{font-size:12px;margin-bottom:7px}
 :root[data-theme="light"] .journey-secondary .journey-card{background:#f5f8fa;box-shadow:none;border-color:#d5e1e8}
 @media(max-width:760px){.journey-path::before{left:0;width:30px;background-size:30px 100px}.journey-stop{padding-left:46px;padding-bottom:32px}.journey-card{padding:22px;border-radius:9px}.journey-secondary .journey-card{width:100%;padding:18px}.journey-open{padding-left:46px}}
+
+/* Readable hierarchy for journey cards, including long degree titles. */
+.journey-card{padding:30px;border-radius:12px;background:linear-gradient(135deg,#86aebb0d,var(--panel) 80%)}
+.journey-card .journey-kind{margin-bottom:18px;font-size:10px;letter-spacing:1.5px}
+.journey-card .eyebrow{font-size:12px;letter-spacing:1.4px;margin-bottom:16px}
+.journey-card h3{font-size:clamp(21px,2vw,25px);font-weight:600;letter-spacing:-.35px;line-height:1.4;overflow-wrap:break-word;margin:0 0 18px;text-wrap:pretty}
+.journey-card h3+p{font-size:14px;line-height:1.7;color:var(--text);margin:0 0 16px}
+.journey-card p{margin:0 0 12px}
+.journey-card p:last-child{margin-bottom:0}
+.journey-secondary .journey-card{padding:22px;border-radius:10px}
+@media(max-width:760px){.journey-card{padding:24px}.journey-card h3{font-size:22px;letter-spacing:-.25px}.journey-secondary .journey-card{padding:18px}}
