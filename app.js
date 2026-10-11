@@ -239,7 +239,27 @@ const english = {
   "A organização do código em módulos, os testes e o acompanhamento das execuções num projeto de bootcamp.": "Code modules, testing and monitoring workflow runs in a bootcamp project.",
   "Organizar dados públicos de nascimentos para explorar indicadores de saúde pública.": "Organise public birth data to explore public health indicators.",
   "Um fluxo de ingestão e transformação com Python, Snowflake e dbt, um modelo dimensional, testes de qualidade e um dashboard Streamlit.": "An ingestion and transformation workflow with Python, Snowflake and dbt, dimensional models, quality tests and a Streamlit dashboard.",
-  "A ligação entre fontes públicas, modelação, qualidade e apresentação da informação, num projeto de aprendizagem.": "The connection between public sources, models, quality and presenting information in a learning project."
+  "A ligação entre fontes públicas, modelação, qualidade e apresentação da informação, num projeto de aprendizagem.": "The connection between public sources, models, quality and presenting information in a learning project.",
+  "Paula Rodrigues · Feito com carinho, sempre a aprender. 🤍 ✨": "Paula Rodrigues · Made with care, always learning. 🤍 ✨",
+  "O que me inspira": "What inspires me",
+  "fora do código.": "beyond code.",
+  "Interesses que fazem parte de quem sou<br>e da forma como vejo o mundo.": "Interests that are part of who I am<br>and how I see the world.",
+  "Interesses que fazem parte de quem sou": "Interests that are part of who I am",
+  "e da forma como vejo o mundo.": "and how I see the world.",
+  "Fotografia": "Photography",
+  "Livros": "Books",
+  "Filmes e séries": "Films and series",
+  "Gosto de observar o mundo através de uma lente e de descobrir detalhes que, de outra forma, poderiam passar despercebidos.": "I like seeing the world through a lens and noticing details I might otherwise miss.",
+  "A música acompanha-me em diferentes momentos: para desligar, ganhar energia ou simplesmente desfrutar do dia.": "Music is part of different moments in my day: to relax, find energy or simply enjoy the moment.",
+  "Gosto de explorar novos mundos, enfrentar desafios e descobrir soluções enquanto jogo.": "I like exploring new worlds, facing challenges and finding solutions while I play.",
+  "Uma boa leitura é uma forma de descobrir novas ideias, aprender e conhecer outras maneiras de pensar.": "A good book helps me discover new ideas, learn and see other ways of thinking.",
+  "Gosto de descobrir histórias e perspetivas sobre os mais variados temas, com espaço também para a imaginação e a ficção.": "I like discovering stories and different views on many subjects, with room for imagination and fiction too.",
+  "Há sempre algo novo para descobrir, dentro e fora do código.": "There is always something new to discover, in code and beyond.",
+  "À procura de uma oportunidade em part-time": "Looking for a part-time opportunity",
+  "Procuro a minha primeira oportunidade profissional em informática, de preferência em regime de": "I am looking for my first professional opportunity in IT, preferably",
+  "part-time": "part-time",
+  ", para conciliar esta nova etapa com o meu trabalho nas análises clínicas.": ", so I can combine this new step with my work in clinical analysis.",
+  "Estou aberta a uma função júnior ou a um estágio com um horário compatível. Quero contribuir para projetos reais, aprender com uma equipa e continuar a explorar diferentes áreas da informática.": "I am open to a junior role or an internship with a suitable schedule. I want to contribute to real projects, learn with a team and keep exploring different areas of IT."
 };
 let language = 'pt';
 function translate(text) { return language === 'en' ? (english[text] ?? text) : text; }

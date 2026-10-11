@@ -180,3 +180,12 @@ html[data-theme=light] .email-row button:hover{background:#e8f1f7;color:#294b5d}
 .header-tools{gap:2px}.language-switch button{min-width:29px}
 .filters button{padding:9px 8px;font-size:12px}.hero-actions{flex-wrap:wrap}
 }
+
+/* Five interests with a balanced desktop grid and clear part-time availability. */
+.personal-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+.personal-grid .personal-card{grid-column:span 2;min-width:0}
+.personal-grid .personal-card:nth-child(n+4){grid-column:span 3}
+.contact .opportunity-label{display:table;margin:0 auto 24px;padding:10px 18px;border:1px solid var(--line);border-radius:30px;background:var(--panel);color:var(--accent);font-size:13px;font-weight:600;line-height:1.6}
+.contact strong{color:var(--accent);font-weight:600}
+@media(max-width:1000px){.personal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.personal-grid .personal-card,.personal-grid .personal-card:nth-child(n+4){grid-column:auto}.personal-grid .personal-card:last-child{grid-column:1/-1}}
+@media(max-width:700px){.personal-grid{grid-template-columns:1fr}.personal-grid .personal-card,.personal-grid .personal-card:nth-child(n+4),.personal-grid .personal-card:last-child{grid-column:auto}.contact .opportunity-label{max-width:100%;font-size:12px}}
