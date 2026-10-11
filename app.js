@@ -212,7 +212,16 @@ const english = {
   "Gosto de descobrir histórias e de ver o mundo através de outras perspetivas.": "I like discovering stories and seeing the world from other points of view.",
   "Jogos": "Games",
   "Um espaço para explorar, enfrentar desafios e deixar a curiosidade guiar-me.": "A space to explore, face challenges and follow my curiosity.",
-  "O meu percurso continua a ganhar forma. A curiosidade é o ponto de partida.": "My path is still taking shape. Curiosity is where it starts."
+  "O meu percurso continua a ganhar forma. A curiosidade é o ponto de partida.": "My path is still taking shape. Curiosity is where it starts.",
+  "Um caminho feito": "A path shaped",
+  "de descobertas.": "by discovery.",
+  "Saúde, informática e aprendizagem.": "Health, computing and learning.",
+  "Cada etapa acrescenta uma nova perspetiva.": "Each step brings a new perspective.",
+  "FORMAÇÃO ACADÉMICA": "EDUCATION",
+  "EXPERIÊNCIA PROFISSIONAL": "WORK EXPERIENCE",
+  "APRENDIZAGEM CONTÍNUA": "KEEP LEARNING",
+  "Cursos, certificações e encontros que me ajudam a explorar diferentes áreas da informática.": "Courses, certificates and events that help me explore different areas of computing.",
+  "O caminho continua, com espaço para novas experiências.": "The path continues, with room for new experiences."
 };
 let language = 'pt';
 function translate(text) { return language === 'en' ? (english[text] ?? text) : text; }
@@ -466,3 +475,16 @@ document.querySelectorAll('.cert-card').forEach(card => {
     card.style.setProperty('--shine-y', `${event.clientY - rect.top}px`);
   }, { passive: true });
 });
+
+/* Reveal milestones once, while keeping the path usable without JavaScript. */
+if ('IntersectionObserver' in window && !reducedMotion.matches) {
+  const journeyObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('journey-arrived');
+        journeyObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.journey-card, .journey-learning').forEach(card => journeyObserver.observe(card));
+}
