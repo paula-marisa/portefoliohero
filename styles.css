@@ -104,3 +104,21 @@ html[data-theme=light] .email-row button:hover{background:#e8f1f7;color:#294b5d}
 .journey-arrived{animation:journey-arrival .65s ease-out both}
 @media(max-width:760px){.journey-path{margin-top:35px}.journey-path::before{left:10px}.journey-stop{display:block;padding:0 0 28px 40px}.journey-dot{left:10px}.journey-card{padding:24px;border-radius:18px}.journey-card h3{font-size:21px}.journey-card::after,.journey-stop:nth-child(even) .journey-card::after{left:-30px;right:auto;width:29px;transform:scaleX(-1)}.journey-learning{margin-left:40px;padding:32px 20px 20px}.journey-learning>.journey-dot{left:-30px;top:25px}.journey-learning::before{content:"";position:absolute;left:-31px;top:-28px;height:60px;width:2px;background:var(--line)}.journey-learning>.eyebrow{text-align:left}.journey-open{padding-left:40px}}
 @media(prefers-reduced-motion:reduce){.journey-arrived{animation:none}}
+
+/* Footsteps connect the main milestones and quieter learning stops. */
+.journey-path{padding-bottom:25px}
+.journey-path::before{top:0;bottom:0;left:calc(50% - 50px);width:100px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22160%22%20viewBox%3D%220%200%20100%20160%22%3E%3Cg%20fill%3D%22%2386aebb%22%20opacity%3D%22.65%22%3E%3Cg%20transform%3D%22translate(16%2012)%20rotate(-18%2010%2020)%22%3E%3Cpath%20d%3D%22M3%2024C0%2016%201%205%207%202C15-3%2022%204%2021%2013L18%2025Z%22%2F%3E%3Cpath%20d%3D%22M4%2028L18%2029L16%2038Q9%2043%205%2037Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(63%2082)%20rotate(18%2010%2020)%22%3E%3Cpath%20d%3D%22M3%2024C0%2016%201%205%207%202C15-3%2022%204%2021%2013L18%2025Z%22%2F%3E%3Cpath%20d%3D%22M4%2028L18%2029L16%2038Q9%2043%205%2037Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E") center top/100px 160px repeat-y;opacity:1}
+.journey-stop{grid-template-columns:1fr 120px 1fr;padding-bottom:56px}
+.journey-card{border-radius:10px;padding:28px;box-shadow:0 8px 24px #0000000a}
+.journey-card::after,.journey-stop:nth-child(even) .journey-card::after{display:none}
+.journey-secondary .journey-card{width:88%;padding:22px;background:var(--panel);box-shadow:none;border-color:var(--line)}
+.journey-secondary:nth-child(odd) .journey-card{justify-self:end}
+.journey-course .journey-kind{font-size:9px;margin-bottom:12px;opacity:.8}
+.journey-course h4{font-size:18px;color:var(--text);margin:0 0 12px}
+.journey-course p{font-size:13px;margin:0 0 15px}
+.journey-course details{border-top:1px solid var(--line);padding-top:12px}
+.journey-course summary{cursor:pointer;color:var(--accent);font-size:12px;line-height:1.6}
+.journey-course details ul{padding-left:18px;margin-top:14px}
+.journey-course details li{font-size:12px;margin-bottom:7px}
+:root[data-theme="light"] .journey-secondary .journey-card{background:#f5f8fa;box-shadow:none;border-color:#d5e1e8}
+@media(max-width:760px){.journey-path::before{left:0;width:30px;background-size:30px 100px}.journey-stop{padding-left:46px;padding-bottom:32px}.journey-card{padding:22px;border-radius:9px}.journey-secondary .journey-card{width:100%;padding:18px}.journey-open{padding-left:46px}}
