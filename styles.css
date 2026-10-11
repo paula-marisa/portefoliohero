@@ -151,3 +151,32 @@ html[data-theme=light] .email-row button:hover{background:#e8f1f7;color:#294b5d}
 .journey-course p{line-height:1.65;margin-bottom:10px}
 .journey-course details{padding-top:9px}
 @media(max-width:760px){.journey-path::before{background-size:26px 85px}.journey-stop{padding-bottom:26px}.journey-secondary{padding-bottom:18px}.journey-secondary .journey-card{width:100%;padding:18px}.journey-card h3{overflow-wrap:anywhere}.journey-open{max-width:100%}}
+
+/* Mobile polish based on the phone screenshots. */
+@media(max-width:700px){
+.site-header{padding-top:9px;padding-bottom:9px}
+.language-switch button{min-height:40px;min-width:32px}
+.hero{padding-top:22px}.hero .intro{padding-top:20px}
+.hero .intro .personal-motif{width:115px;margin-bottom:8px}
+.hero .hello{margin-bottom:18px}
+.section{padding-top:48px;padding-bottom:48px}
+.about .big-copy{font-size:22px!important;line-height:1.55;margin-top:0;margin-bottom:22px}
+.about p{line-height:1.8}
+.project-grid{gap:34px}
+.project-art.screenshot-art{position:relative;min-width:0;height:auto;aspect-ratio:16/10}
+.project-art.screenshot-art img{position:absolute;inset:0;width:100%;height:100%;min-height:0;max-height:100%;object-fit:contain;padding:14px}
+.project-links{gap:8px 18px}.project-links .text-link{min-height:44px;display:inline-flex;align-items:center}
+.personal-card{padding:24px}.personal-card h3{margin:18px 0 12px}
+.personal-card p{margin:0;line-height:1.8}
+.personal-note{margin-top:26px;padding:20px 0 0}
+.focus-content.cert-card{padding:24px}.focus-content h3{line-height:1.35}
+.journey-path{margin-top:28px;padding-bottom:8px}
+.journey-stop{padding-left:38px}.journey-card{padding:22px}
+.journey-card .journey-kind{margin-bottom:14px}
+.journey-card p,.journey-card li{line-height:1.75}
+}
+@media(max-width:380px){
+.site-header .brand{font-size:26px}.menu-toggle{min-width:44px;padding:0 4px}
+.header-tools{gap:2px}.language-switch button{min-width:29px}
+.filters button{padding:9px 8px;font-size:12px}.hero-actions{flex-wrap:wrap}
+}
