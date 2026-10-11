@@ -221,7 +221,8 @@ const english = {
   "EXPERIÊNCIA PROFISSIONAL": "WORK EXPERIENCE",
   "APRENDIZAGEM CONTÍNUA": "KEEP LEARNING",
   "Cursos, certificações e encontros que me ajudam a explorar diferentes áreas da informática.": "Courses, certificates and events that help me explore different areas of computing.",
-  "O caminho continua, com espaço para novas experiências.": "The path continues, with room for new experiences."
+  "O caminho continua, com espaço para novas experiências.": "The path continues, with room for new experiences.",
+  "Os primeiros passos de um percurso que continua a crescer.": "The first steps of a journey that keeps growing."
 };
 let language = 'pt';
 function translate(text) { return language === 'en' ? (english[text] ?? text) : text; }
