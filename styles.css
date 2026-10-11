@@ -140,3 +140,14 @@ html[data-theme=light] .email-row button:hover{background:#e8f1f7;color:#294b5d}
 .journey-open .journey-open-description{margin:0;font-size:15px;line-height:1.8;color:var(--text)}
 :root[data-theme="light"] .journey-open{background:linear-gradient(135deg,#eaf3f8,#ffffff);border-color:#b9d0df;box-shadow:0 8px 28px #426d820d}
 @media(max-width:760px){.journey-open{margin-top:24px;padding:24px 20px}.journey-open .journey-open-description{font-size:14px}}
+
+/* Keep complementary learning quieter and the footprints in proportion. */
+.journey-path::before{background-size:64px 115px}
+.journey-stop{padding-bottom:36px}
+.journey-secondary{padding-bottom:22px}
+.journey-secondary .journey-card{width:84%;padding:18px 20px}
+.journey-course .journey-kind{margin-bottom:9px}
+.journey-course h4{margin-bottom:8px}
+.journey-course p{line-height:1.65;margin-bottom:10px}
+.journey-course details{padding-top:9px}
+@media(max-width:760px){.journey-path::before{background-size:26px 85px}.journey-stop{padding-bottom:26px}.journey-secondary{padding-bottom:18px}.journey-secondary .journey-card{width:100%;padding:18px}.journey-card h3{overflow-wrap:anywhere}.journey-open{max-width:100%}}

@@ -441,6 +441,7 @@ function setLanguage(nextLanguage) {
   document.querySelectorAll('[data-language]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
   document.querySelector('#project-count').textContent = projectCountText(projectCards.filter(card => !card.hidden).length);
   document.querySelector('#copy-status').textContent = '';
+  greeting.textContent = translate('Olá! Que bom ver-te por aqui.');
   applyTheme(document.documentElement.dataset.theme);
   projectCards.forEach(card => card.querySelector('.project-detail').setAttribute('aria-label', `${language === 'en' ? 'Explore' : 'Explorar'} ${card.querySelector('h3').textContent}`));
   if (projectDialog.open && lastProjectTrigger) {
