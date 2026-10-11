@@ -222,7 +222,8 @@ const english = {
   "APRENDIZAGEM CONTÍNUA": "KEEP LEARNING",
   "Cursos, certificações e encontros que me ajudam a explorar diferentes áreas da informática.": "Courses, certificates and events that help me explore different areas of computing.",
   "O caminho continua, com espaço para novas experiências.": "The path continues, with room for new experiences.",
-  "Os primeiros passos de um percurso que continua a crescer.": "The first steps of a journey that keeps growing."
+  "Os primeiros passos de um percurso que continua a crescer.": "The first steps of a journey that keeps growing.",
+  "O caminho continua. Continuo à procura de novas oportunidades e de novas formas de aprender.": "The journey continues. I keep looking for new opportunities and new ways to learn."
 };
 let language = 'pt';
 function translate(text) { return language === 'en' ? (english[text] ?? text) : text; }
