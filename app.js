@@ -259,7 +259,11 @@ const english = {
   "Procuro a minha primeira oportunidade profissional em informática, de preferência em regime de": "I am looking for my first professional opportunity in IT, preferably",
   "part-time": "part-time",
   ", para conciliar esta nova etapa com o meu trabalho nas análises clínicas.": ", so I can combine this new step with my work in clinical analysis.",
-  "Estou aberta a uma função júnior ou a um estágio com um horário compatível. Quero contribuir para projetos reais, aprender com uma equipa e continuar a explorar diferentes áreas da informática.": "I am open to a junior role or an internship with a suitable schedule. I want to contribute to real projects, learn with a team and keep exploring different areas of IT."
+  "Estou aberta a uma função júnior ou a um estágio com um horário compatível. Quero contribuir para projetos reais, aprender com uma equipa e continuar a explorar diferentes áreas da informática.": "I am open to a junior role or an internship with a suitable schedule. I want to contribute to real projects, learn with a team and keep exploring different areas of IT.",
+  "Vamos trabalhar": "Shall we work",
+  "juntos?": "together?",
+  "Falar com a Paula": "Talk to Paula",
+  "Uma conversa pode ser o primeiro passo.": "A conversation can be the first step."
 };
 let language = 'pt';
 function translate(text) { return language === 'en' ? (english[text] ?? text) : text; }
@@ -526,4 +530,41 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.journey-card, .journey-learning').forEach(card => journeyObserver.observe(card));
+}
+
+/* An optional invitation gesture; the email link always works by click or keyboard. */
+const contactInvite = document.querySelector('#contact-invite');
+if (contactInvite) {
+  let contactFrame = 0;
+  let contactResetTimer;
+  const resetContactMotion = () => {
+    cancelAnimationFrame(contactFrame);
+    contactFrame = 0;
+    contactInvite.style.setProperty('--invite-x', '0px');
+    contactInvite.style.setProperty('--invite-y', '0px');
+  };
+  contactInvite.addEventListener('pointermove', event => {
+    if (reducedMotion.matches || event.pointerType !== 'mouse') return;
+    const rect = contactInvite.getBoundingClientRect();
+    const x = Math.max(-1, Math.min(1, (event.clientX - rect.left) / rect.width * 2 - 1));
+    const y = Math.max(-1, Math.min(1, (event.clientY - rect.top) / rect.height * 2 - 1));
+    cancelAnimationFrame(contactFrame);
+    contactFrame = requestAnimationFrame(() => {
+      contactInvite.style.setProperty('--invite-x', `${x * 8}px`);
+      contactInvite.style.setProperty('--invite-y', `${y * 5}px`);
+      contactFrame = 0;
+    });
+  }, { passive: true });
+  contactInvite.addEventListener('pointerleave', resetContactMotion);
+  contactInvite.addEventListener('pointercancel', resetContactMotion);
+  contactInvite.addEventListener('pointerdown', () => {
+    if (reducedMotion.matches) return;
+    clearTimeout(contactResetTimer);
+    contactInvite.classList.add('contact-invite-pressed');
+    contactResetTimer = setTimeout(() => contactInvite.classList.remove('contact-invite-pressed'), 450);
+  }, { passive: true });
+  reducedMotion.addEventListener('change', () => {
+    resetContactMotion();
+    if (reducedMotion.matches) contactInvite.classList.remove('contact-invite-pressed');
+  });
 }
