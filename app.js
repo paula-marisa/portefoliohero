@@ -532,39 +532,63 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
   document.querySelectorAll('.journey-card, .journey-learning').forEach(card => journeyObserver.observe(card));
 }
 
-/* An optional invitation gesture; the email link always works by click or keyboard. */
+
+/* The string follows the pinch and the button, including during a gentle tug. */
 const contactInvite = document.querySelector('#contact-invite');
 if (contactInvite) {
-  let contactFrame = 0;
-  let contactResetTimer;
-  const resetContactMotion = () => {
-    cancelAnimationFrame(contactFrame);
-    contactFrame = 0;
-    contactInvite.style.setProperty('--invite-x', '0px');
-    contactInvite.style.setProperty('--invite-y', '0px');
+  const hand = contactInvite.querySelector('.contact-hand-real');
+  const buttonWrap = contactInvite.querySelector('.contact-button-wrap');
+  const button = contactInvite.querySelector('.contact-cta');
+  const string = contactInvite.querySelector('.contact-string');
+  const stringPath = string.querySelector('path');
+  let frame = 0, touchTimer = 0;
+  let targetX = 0, targetY = 0, targetPull = 0;
+  let x = 0, y = 0, pull = 0;
+  const drawString = () => {
+    const area = contactInvite.getBoundingClientRect();
+    const hr = hand.getBoundingClientRect();
+    const br = button.getBoundingClientRect();
+    if (!area.width || !area.height) return;
+    string.setAttribute('viewBox', `0 0 ${area.width} ${area.height}`);
+    const sx = hr.left - area.left + hr.width * .965;
+    const sy = hr.top - area.top + hr.height * .406;
+    const ex = br.left - area.left + 3;
+    const ey = br.top - area.top + br.height * .5;
+    const sag = 12 * (1 - pull);
+    stringPath.setAttribute('d', `M ${sx} ${sy} Q ${(sx+ex)/2} ${(sy+ey)/2+sag} ${ex} ${ey}`);
   };
+  const animate = () => {
+    frame = 0;
+    const ease = reducedMotion.matches ? 1 : .16;
+    x += (targetX-x)*ease;
+    y += (targetY-y)*ease;
+    pull += (targetPull-pull)*ease;
+    hand.style.transform = `translate(${x*.3-pull*12}px,${y*.3}px)`;
+    buttonWrap.style.transform = `translate(${x-pull*5}px,${y}px)`;
+    drawString();
+    if (Math.abs(targetX-x)+Math.abs(targetY-y)+Math.abs(targetPull-pull) > .025) frame=requestAnimationFrame(animate);
+  };
+  const schedule = () => { if (!frame) frame=requestAnimationFrame(animate); };
+  const reset = () => {targetX=0;targetY=0;targetPull=0;schedule();};
   contactInvite.addEventListener('pointermove', event => {
     if (reducedMotion.matches || event.pointerType !== 'mouse') return;
-    const rect = contactInvite.getBoundingClientRect();
-    const x = Math.max(-1, Math.min(1, (event.clientX - rect.left) / rect.width * 2 - 1));
-    const y = Math.max(-1, Math.min(1, (event.clientY - rect.top) / rect.height * 2 - 1));
-    cancelAnimationFrame(contactFrame);
-    contactFrame = requestAnimationFrame(() => {
-      contactInvite.style.setProperty('--invite-x', `${x * 8}px`);
-      contactInvite.style.setProperty('--invite-y', `${y * 5}px`);
-      contactFrame = 0;
-    });
-  }, { passive: true });
-  contactInvite.addEventListener('pointerleave', resetContactMotion);
-  contactInvite.addEventListener('pointercancel', resetContactMotion);
-  contactInvite.addEventListener('pointerdown', () => {
-    if (reducedMotion.matches) return;
-    clearTimeout(contactResetTimer);
-    contactInvite.classList.add('contact-invite-pressed');
-    contactResetTimer = setTimeout(() => contactInvite.classList.remove('contact-invite-pressed'), 450);
-  }, { passive: true });
-  reducedMotion.addEventListener('change', () => {
-    resetContactMotion();
-    if (reducedMotion.matches) contactInvite.classList.remove('contact-invite-pressed');
-  });
+    const rect=contactInvite.getBoundingClientRect();
+    targetX=Math.max(-1,Math.min(1,(event.clientX-rect.left)/rect.width*2-1))*6;
+    targetY=Math.max(-1,Math.min(1,(event.clientY-rect.top)/rect.height*2-1))*3;
+    targetPull=1;schedule();
+  },{passive:true});
+  contactInvite.addEventListener('pointerleave',reset);
+  contactInvite.addEventListener('pointercancel',reset);
+  contactInvite.addEventListener('pointerdown',()=>{
+    if(reducedMotion.matches)return;
+    clearTimeout(touchTimer);targetPull=1;schedule();
+    touchTimer=setTimeout(reset,450);
+  },{passive:true});
+  button.addEventListener('focus',()=>{if(!reducedMotion.matches){targetPull=.6;schedule();}});
+  button.addEventListener('blur',reset);
+  hand.addEventListener('load',schedule);
+  window.addEventListener('resize',schedule,{passive:true});
+  if('ResizeObserver' in window) new ResizeObserver(schedule).observe(contactInvite);
+  reducedMotion.addEventListener('change',()=>{clearTimeout(touchTimer);reset();});
+  schedule();
 }
