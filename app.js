@@ -263,7 +263,8 @@ const english = {
   "Vamos trabalhar": "Shall we work",
   "juntos?": "together?",
   "Falar com a Paula": "Talk to Paula",
-  "Uma conversa pode ser o primeiro passo.": "A conversation can be the first step."
+  "Uma conversa pode ser o primeiro passo.": "A conversation can be the first step.",
+  "Falar com a Paula por email": "Email Paula"
 };
 let language = 'pt';
 function translate(text) { return language === 'en' ? (english[text] ?? text) : text; }
@@ -586,6 +587,23 @@ if (contactInvite) {
   },{passive:true});
   button.addEventListener('focus',()=>{if(!reducedMotion.matches){targetPull=.6;schedule();}});
   button.addEventListener('blur',reset);
+  let emailTimer = 0;
+  contactInvite.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || reducedMotion.matches) return;
+      event.preventDefault();
+      clearTimeout(emailTimer);
+      clearTimeout(touchTimer);
+      targetPull = 1;
+      schedule();
+      const destination = link.href;
+      emailTimer = setTimeout(() => {
+        window.location.href = destination;
+        touchTimer = setTimeout(reset, 250);
+      }, 200);
+    });
+  });
+
   hand.addEventListener('load',schedule);
   window.addEventListener('resize',schedule,{passive:true});
   if('ResizeObserver' in window) new ResizeObserver(schedule).observe(contactInvite);
