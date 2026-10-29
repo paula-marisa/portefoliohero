@@ -265,7 +265,9 @@ const english = {
   "Falar com a Paula": "Talk to Paula",
   "Uma conversa pode ser o primeiro passo.": "A conversation can be the first step.",
   "Falar com a Paula por email": "Email Paula",
-  "VAMOS CONVERSAR": "LET'S TALK"
+  "VAMOS CONVERSAR": "LET'S TALK",
+  "Falar comigo": "Talk to me",
+  "Falar comigo por email": "Email me"
 };
 let language = 'pt';
 function translate(text) { return language === 'en' ? (english[text] ?? text) : text; }
