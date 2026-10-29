@@ -225,3 +225,9 @@ html[data-theme=light] .contact .contact-cta{border-color:#426d82;box-shadow:0 0
 .contact-hand-link{display:block;width:100%;min-width:0;position:relative;z-index:2;border-radius:18px;cursor:pointer;text-decoration:none}
 .contact-hand-link:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
 .contact-hand-link .contact-hand-real{pointer-events:none}
+
+/* Two gentle invitation tugs, followed by a quiet pause. */
+.contact-invite{--invite-pull:0}
+.contact .contact-cta{box-shadow:0 0 0 calc(5px + var(--invite-pull) * 3px) #9fcbd414,0 10px 28px #00000018}
+.contact-hand-link{outline-offset:7px}
+@media(prefers-reduced-motion:reduce){.contact .contact-cta{box-shadow:0 0 0 5px #9fcbd40b,0 10px 28px #00000018}}
