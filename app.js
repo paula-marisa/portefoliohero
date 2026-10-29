@@ -264,7 +264,8 @@ const english = {
   "juntos?": "together?",
   "Falar com a Paula": "Talk to Paula",
   "Uma conversa pode ser o primeiro passo.": "A conversation can be the first step.",
-  "Falar com a Paula por email": "Email Paula"
+  "Falar com a Paula por email": "Email Paula",
+  "VAMOS CONVERSAR": "LET'S TALK"
 };
 let language = 'pt';
 function translate(text) { return language === 'en' ? (english[text] ?? text) : text; }
@@ -541,7 +542,8 @@ if (contactInvite) {
   const buttonWrap = contactInvite.querySelector('.contact-button-wrap');
   const button = contactInvite.querySelector('.contact-cta');
   const string = contactInvite.querySelector('.contact-string');
-  const stringPath = string.querySelector('path');
+  const stringPaths = [...string.querySelectorAll('path')];
+  const stringKnot = string.querySelector('.cord-knot');
   let frame = 0, touchTimer = 0;
   let targetX = 0, targetY = 0, targetPull = 0;
   let x = 0, y = 0, pull = 0;
@@ -569,10 +571,13 @@ if (contactInvite) {
     string.setAttribute('viewBox', `0 0 ${area.width} ${area.height}`);
     const sx = hr.left - area.left + hr.width * .965;
     const sy = hr.top - area.top + hr.height * .406;
-    const ex = br.left - area.left + 3;
+    const ex = br.left - area.left - 5;
     const ey = br.top - area.top + br.height * .5;
     const sag = 12 * (1 - pull);
-    stringPath.setAttribute('d', `M ${sx} ${sy} Q ${(sx+ex)/2} ${(sy+ey)/2+sag} ${ex} ${ey}`);
+    const curve = `M ${sx} ${sy} Q ${(sx+ex)/2} ${(sy+ey)/2+sag} ${ex} ${ey}`;
+    stringPaths.forEach(path => path.setAttribute('d', curve));
+    stringKnot.setAttribute('cx', sx);
+    stringKnot.setAttribute('cy', sy);
   };
   const animate = () => {
     frame = 0;
