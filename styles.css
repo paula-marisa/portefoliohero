@@ -254,3 +254,24 @@ html[data-theme=light] .contact .contact-cta{border-color:#749caf;box-shadow:ins
 .contact-cta-copy{font-size:16px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;line-height:1.4}
 @media(max-width:700px){.contact-cta-copy{font-size:13px;letter-spacing:.8px}}
 @media(max-width:380px){.contact-cta-copy{font-size:12px;letter-spacing:.6px}}
+
+/* A quieter, compact composition: natural hand, fine thread and matte button. */
+.contact-invite{grid-template-columns:minmax(0,230px) minmax(0,230px);gap:45px;max-width:545px;min-height:170px;margin:20px auto 0;padding:15px 15px 20px;--cord-color:#a7c5cf}
+.contact-invite::before{display:none}
+.contact-hand-real{margin-top:-17px;filter:none;mask-image:linear-gradient(to right,transparent,#000 13%);-webkit-mask-image:linear-gradient(to right,transparent,#000 13%)}
+.contact .contact-cta{min-height:68px;width:100%;padding:18px 22px;gap:20px;border:1px solid #c7e3ea66;border-radius:16px;background:#b9d9e1;color:#17343f;box-shadow:inset 0 1px #ffffff55,0 6px 18px #00000010}
+.contact-cta-copy{font-size:13px;font-weight:600;line-height:1.4;letter-spacing:1px}
+.contact .contact-cta-arrow{display:block;flex:0 0 20px;width:20px;height:20px;border:0;border-radius:0;background:none;color:inherit}
+.contact-cta-arrow svg{display:block;width:100%;height:100%}
+.contact .contact-cta::before{left:-5px;width:5px;height:5px;border:1px solid #8aacb9;background:var(--bg);box-shadow:none}
+.contact .contact-cta:hover,.contact .contact-cta:focus-visible{background:#c7e3e9;border-color:#d4eaf0;box-shadow:0 7px 22px #92bece20}
+.contact-invite-note{font-size:10px;line-height:1.65;margin-top:12px;color:var(--muted);max-width:230px;text-align:center}
+.contact-string .cord-shadow,.contact-string .cord-light,.contact-string .cord-knot{display:none}
+.contact-string .cord-body{stroke:var(--cord-color);stroke-width:1.35;filter:none}
+html[data-theme=light] .contact-invite{--cord-color:#789aaa}
+html[data-theme=light] .contact .contact-cta{background:#426d82;color:#ffffff;border-color:#426d82;box-shadow:0 6px 18px #426d8214}
+html[data-theme=light] .contact .contact-cta:hover,html[data-theme=light] .contact .contact-cta:focus-visible{background:#355d72;border-color:#355d72;box-shadow:0 7px 22px #426d8220}
+.contact-invite .contact-hand-link{border-radius:12px}
+@media(max-width:700px){.contact-invite{grid-template-columns:36% minmax(0,1fr);gap:22px;max-width:410px;min-height:140px;margin-top:12px;padding:12px 3px}.contact .contact-cta{min-height:60px;padding:15px 17px;border-radius:14px;gap:10px}.contact-cta-copy{font-size:12px;letter-spacing:.65px}.contact .contact-cta-arrow{flex-basis:18px;width:18px;height:18px}.contact-hand-real{margin-top:-14px}.contact-invite-note{font-size:9px;max-width:none}.contact-string .cord-body{stroke-width:1.2}}
+@media(max-width:380px){.contact-invite{gap:17px;grid-template-columns:33% minmax(0,1fr)}.contact .contact-cta{padding:14px 13px;gap:8px}.contact-cta-copy{font-size:11px;letter-spacing:.55px}}
+@media(prefers-reduced-motion:reduce){.contact .contact-cta{box-shadow:0 6px 18px #00000010}}

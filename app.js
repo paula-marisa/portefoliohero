@@ -575,7 +575,7 @@ if (contactInvite) {
     const sy = hr.top - area.top + hr.height * .406;
     const ex = br.left - area.left - 5;
     const ey = br.top - area.top + br.height * .5;
-    const sag = 12 * (1 - pull);
+    const sag = 7 * (1 - pull);
     const curve = `M ${sx} ${sy} Q ${(sx+ex)/2} ${(sy+ey)/2+sag} ${ex} ${ey}`;
     stringPaths.forEach(path => path.setAttribute('d', curve));
     stringKnot.setAttribute('cx', sx);
@@ -587,8 +587,8 @@ if (contactInvite) {
     x += (targetX-x)*ease;
     y += (targetY-y)*ease;
     pull += (targetPull-pull)*ease;
-    hand.style.transform = `translate(${x*.3-pull*20}px,${y*.3-pull*6}px)`;
-    buttonWrap.style.transform = `translate(${x-pull*9}px,${y-pull*2}px)`;
+    hand.style.transform = `translate(${x*.3-pull*14}px,${y*.3-pull*4}px)`;
+    buttonWrap.style.transform = `translate(${x-pull*6}px,${y-pull*2}px)`;
     contactInvite.style.setProperty('--invite-pull', pull.toFixed(3));
     drawString();
     if (Math.abs(targetX-x)+Math.abs(targetY-y)+Math.abs(targetPull-pull) > .025) frame=requestAnimationFrame(animate);
