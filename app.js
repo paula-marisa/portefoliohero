@@ -1,8 +1,8 @@
 'use strict';
 const english = {
-"À procura de uma oportunidade em part-time ou com um horário que me permita conciliar com o meu trabalho atual por turnos": "Looking for a part-time opportunity or a schedule I can combine with my current shift work",
-"Procuro a minha primeira oportunidade profissional em informática, numa função júnior ou num estágio, que consiga conciliar com o meu trabalho por turnos nas análises clínicas.": "I am looking for my first professional opportunity in IT, in a junior role or an internship that I can combine with my shifts in clinical laboratory work.",
-"Quero pôr em prática o que aprendi, contribuir para projetos reais e continuar a aprender com uma equipa. Estou aberta a diferentes áreas da informática e a encontrar onde posso dar o meu melhor.": "I want to put what I have learned into practice, contribute to real projects and keep learning with a team. I am open to different areas of IT and to finding where I can do my best.",
+"Procuro uma oportunidade em part-time ou compatível com o meu trabalho por turnos.": "Looking for a part-time opportunity or one that fits around my shift work.",
+"Procuro a minha primeira oportunidade profissional em informática, numa função júnior ou num estágio, que consiga conciliar com o meu trabalho por turnos em Análises Clínicas.": "I am looking for my first professional opportunity in IT, in a junior role or an internship that I can combine with my shifts in clinical laboratory work.",
+"Quero pôr em prática o que aprendi, contribuir para projetos reais e continuar a aprender com uma equipa. Tenho interesse em explorar diferentes áreas da informática e desenvolver as minhas competências através da experiência.": "I want to put what I have learned into practice, contribute to real projects and keep learning with a team. I am interested in exploring different areas of IT and developing my skills through practical experience.",
   "Paula Rodrigues · Código com propósito": "Paula Rodrigues · Code with purpose",
   "Saltar para os projetos": "Skip to projects",
   "Menu": "Menu",
