@@ -240,7 +240,7 @@ const english = {
   "Organizar dados públicos de nascimentos para explorar indicadores de saúde pública.": "Organise public birth data to explore public health indicators.",
   "Um fluxo de ingestão e transformação com Python, Snowflake e dbt, um modelo dimensional, testes de qualidade e um dashboard Streamlit.": "An ingestion and transformation workflow with Python, Snowflake and dbt, dimensional models, quality tests and a Streamlit dashboard.",
   "A ligação entre fontes públicas, modelação, qualidade e apresentação da informação, num projeto de aprendizagem.": "The connection between public sources, models, quality and presenting information in a learning project.",
-  "Paula Rodrigues · Feito com carinho, sempre a aprender. 🤍 ✨": "Paula Rodrigues · Made with care, always learning. 🤍 ✨",
+  "Paula Rodrigues · Entre o que já sou e tudo o que ainda posso ser. ❤️ 🍀": "Paula Rodrigues · Between who I am and all I can still become. ❤️ 🍀",
   "O que me inspira": "What inspires me",
   "fora do código.": "beyond code.",
   "Interesses que fazem parte de quem sou<br>e da forma como vejo o mundo.": "Interests that are part of who I am<br>and how I see the world.",
