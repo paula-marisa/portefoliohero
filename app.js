@@ -556,7 +556,7 @@ if (contactInvite) {
     stopInvitation();
     if (!canInvite()) return;
     const gestures = [1, .12, .95, 0];
-    const pauses = [340, 210, 340, 5200];
+    const pauses = [420, 260, 420, 8500];
     targetPull = gestures[step];
     schedule();
     inviteTimer = setTimeout(() => invitationStep((step + 1) % gestures.length), pauses[step]);
@@ -573,8 +573,8 @@ if (contactInvite) {
     string.setAttribute('viewBox', `0 0 ${area.width} ${area.height}`);
     const sx = hr.left - area.left + hr.width * .965;
     const sy = hr.top - area.top + hr.height * .406;
-    const ex = br.left - area.left - 5;
-    const ey = br.top - area.top + br.height * .5;
+    const ex = br.left - area.left + 13;
+    const ey = br.top - area.top + br.height * .5 - 4;
     const sag = 7 * (1 - pull);
     const curve = `M ${sx} ${sy} Q ${(sx+ex)/2} ${(sy+ey)/2+sag} ${ex} ${ey}`;
     stringPaths.forEach(path => path.setAttribute('d', curve));
@@ -587,8 +587,8 @@ if (contactInvite) {
     x += (targetX-x)*ease;
     y += (targetY-y)*ease;
     pull += (targetPull-pull)*ease;
-    hand.style.transform = `translate(${x*.3-pull*14}px,${y*.3-pull*4}px)`;
-    buttonWrap.style.transform = `translate(${x-pull*6}px,${y-pull*2}px)`;
+    hand.style.transform = `translate(${x*.3-pull*10}px,${y*.3-pull*2}px)`;
+    buttonWrap.style.transform = `translate(${x-pull*5}px,${y-pull*2}px) rotate(${-pull*.8}deg)`;
     contactInvite.style.setProperty('--invite-pull', pull.toFixed(3));
     drawString();
     if (Math.abs(targetX-x)+Math.abs(targetY-y)+Math.abs(targetPull-pull) > .025) frame=requestAnimationFrame(animate);
