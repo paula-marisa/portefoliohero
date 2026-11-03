@@ -462,7 +462,7 @@ document.querySelectorAll('[aria-label], [title], [alt], meta[content]').forEach
     if (original && Object.hasOwn(english, original)) translatedAttributes.push({node, attribute, original});
   });
 });
-function setLanguage(nextLanguage) {
+function setLanguage(nextLanguage, rememberChoice = true) {
   language = nextLanguage === 'en' ? 'en' : 'pt';
   document.documentElement.lang = language === 'en' ? 'en' : 'pt-PT';
   translatedTextNodes.forEach(({node, original, key}) => {
@@ -479,16 +479,23 @@ function setLanguage(nextLanguage) {
     const card = lastProjectTrigger.closest('.project');
     if (card) openProject(card, lastProjectTrigger);
   }
-  try { localStorage.setItem('paula-language', language); } catch {}
+  if (rememberChoice) {
+    try { localStorage.setItem('paula-language', language); } catch {}
+  }
 }
 document.querySelectorAll('[data-language]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.language)));
-let initialLanguage = 'pt';
-try {
+// Explicit links and manual choices take priority over the browser's preferred language.
+function getInitialLanguage() {
   const requested = new URLSearchParams(window.location.search).get('lang');
-  const saved = localStorage.getItem('paula-language');
-  initialLanguage = requested === 'pt' || requested === 'en' ? requested : saved === 'en' ? 'en' : 'pt';
-} catch {}
-setLanguage(initialLanguage);
+  if (requested === 'pt' || requested === 'en') return requested;
+  let saved;
+  try { saved = localStorage.getItem('paula-language'); } catch {}
+  if (saved === 'pt' || saved === 'en') return saved;
+  const preferred = navigator.languages?.[0] || navigator.language || '';
+  return /^pt(?:-|$)/i.test(preferred) ? 'pt' : 'en';
+}
+// Automatic detection is not saved as a manual preference.
+setLanguage(getInitialLanguage(), false);
 
 /* An accessible tabbed view connects interests to real projects. */
 const focusTabs = [...document.querySelectorAll('[data-focus]')];
