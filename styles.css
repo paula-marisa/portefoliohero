@@ -197,10 +197,10 @@ html[data-theme=light] .email-row button:hover{background:#e8f1f7;color:#294b5d}
 .contact-hand-real{display:block;width:100%;max-width:100%;height:auto;margin:20px 0 0;pointer-events:none;position:relative;transition:none;will-change:transform}
 .contact-hand-link::after{content:"";position:absolute;inset:0 auto 0 -1px;width:18px;background:linear-gradient(90deg,var(--bg),transparent);pointer-events:none}
 .contact-button-wrap{position:relative;min-width:0;z-index:2;transform-origin:0 50%;will-change:transform}
-.contact .contact-cta{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:82px;padding:22px 22px 22px 30px;border:1px solid #deeff2a0;border-radius:12px 20px 20px 12px;background:linear-gradient(135deg,#d2e7eb,#aacdd7);color:#17343f;box-shadow:inset 0 1px 0 #fff9,inset 0 -3px 0 #6d9aaa38,0 10px 24px #0002;transform:rotate(-2deg);transition:background .2s,box-shadow .2s}
+.contact .contact-cta{position:relative;display:grid;grid-template-columns:32px minmax(0,1fr) 32px;align-items:center;gap:0;width:100%;min-height:82px;padding:22px 16px;border:1px solid #deeff2a0;border-radius:12px 20px 20px 12px;background:linear-gradient(135deg,#d2e7eb,#aacdd7);color:#17343f;box-shadow:inset 0 1px 0 #fff9,inset 0 -3px 0 #6d9aaa38,0 10px 24px #0002;transform:rotate(-2deg);transition:background .2s,box-shadow .2s}
 .contact .contact-cta::before{content:"";position:absolute;left:7px;top:50%;width:9px;height:9px;border:2px solid #7eabb9;border-radius:50%;background:var(--bg);transform:translateY(-50%);box-shadow:inset 0 1px 2px #0005,0 1px 0 #fff8}
-.contact-cta-copy{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;line-height:1.4;text-align:left}
-.contact-cta-arrow{display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border:1px solid #17343f26;border-radius:50%;transition:transform .2s}
+.contact-cta-copy{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;line-height:1.4;text-align:center;grid-column:2;min-width:0}
+.contact-cta-arrow{grid-column:3;display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border:1px solid #17343f26;border-radius:50%;transition:transform .2s}
 .contact-cta-arrow svg{display:block;width:18px;height:18px}
 .contact .contact-cta:hover{transform:rotate(-2deg);box-shadow:inset 0 1px #fff9,inset 0 -3px #6d9aaa38,0 14px 28px #0003}
 .contact-cta:hover .contact-cta-arrow{transform:translate(2px,-2px)}
@@ -216,6 +216,6 @@ html[data-theme=light] .contact .contact-cta{background:linear-gradient(135deg,#
 html[data-theme=light] .contact-cta-arrow{border-color:#ffffff40}
 html[data-theme=light] .contact-string .cord-body{stroke:#648b9e}
 .contact .contact-links{margin-top:24px}
-@media(max-width:700px){.contact-invite{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:24px;row-gap:20px;max-width:450px;margin:24px auto;padding:18px 8px 6px}.contact .contact-cta{min-height:72px;padding:17px 14px 17px 24px;gap:8px}.contact-cta-copy{font-size:12px;letter-spacing:.65px}.contact-cta-arrow{flex-basis:27px;width:27px;height:27px}.contact-invite-note{font-size:11px}.contact-hand-real{margin-top:14px}}
-@media(max-width:380px){.contact-invite{column-gap:17px;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}.contact-cta-copy{font-size:11px;letter-spacing:.4px}.contact .contact-cta{padding-right:10px}.contact-cta-arrow{flex-basis:24px;width:24px;height:24px}}
+@media(max-width:700px){.contact-invite{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:24px;row-gap:20px;max-width:450px;margin:24px auto;padding:18px 8px 6px}.contact .contact-cta{min-height:72px;padding:17px 10px;grid-template-columns:27px minmax(0,1fr) 27px;gap:0}.contact-cta-copy{font-size:12px;letter-spacing:.65px}.contact-cta-arrow{flex-basis:27px;width:27px;height:27px}.contact-invite-note{font-size:11px}.contact-hand-real{margin-top:14px}}
+@media(max-width:380px){.contact-invite{column-gap:17px;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}.contact-cta-copy{font-size:11px;letter-spacing:.4px}.contact .contact-cta{padding-inline:8px;grid-template-columns:24px minmax(0,1fr) 24px}.contact-cta-arrow{flex-basis:24px;width:24px;height:24px}}
 @media(prefers-reduced-motion:reduce){.contact-hand-real,.contact-button-wrap{transform:none!important;will-change:auto}.contact .contact-cta,.contact-cta-arrow{transition:none}}
