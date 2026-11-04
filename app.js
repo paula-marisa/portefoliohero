@@ -113,7 +113,7 @@ const english = {
   "Experiência profissional": "Work experience",
   "SETEMBRO DE 2015 — PRESENTE": "SEPTEMBER 2015 — PRESENT",
   "Técnica de Análises Clínicas e Saúde Pública": "Clinical Analysis and Public Health Technician",
-  "Experiência profissional na ULSSA, EPE e na ULSTMAD, EPE.": "Professional experience at ULSSA, EPE and ULSTMAD, EPE.",
+  "Experiência profissional na Unidade Local de Saúde de Santo António, E. P. E. (ULSSA), e na Unidade Local de Saúde de Trás-os-Montes e Alto Douro, E. P. E. (ULSTMAD).": "Professional experience at Unidade Local de Saúde de Santo António, E. P. E. (ULSSA), and Unidade Local de Saúde de Trás-os-Montes e Alto Douro, E. P. E. (ULSTMAD).",
   "Colheita de sangue e preparação e processamento de amostras biológicas.": "Collecting blood and preparing and processing biological samples.",
   "Realização de análises nas áreas de Química Clínica, Hematologia, Microbiologia e Imuno-hemoterapia, de acordo com os procedimentos e critérios de qualidade do laboratório.": "Performing tests in clinical chemistry, haematology, microbiology and transfusion testing, following laboratory procedures and quality criteria.",
   "Orientação e acompanhamento de estagiários em contexto laboratorial.": "Guiding and supporting trainees in the laboratory.",
