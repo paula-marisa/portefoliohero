@@ -109,7 +109,7 @@ const english = {
   "Licenciatura em Engenharia Informática": "Bachelor's degree in Computer Engineering",
   "Formação em conceção, desenvolvimento e manutenção de sistemas informáticos, incluindo programação, bases de dados, redes e segurança.": "Training in the design, development and maintenance of computer systems, including programming, databases, networks and security.",
   "Licenciatura em Análises Clínicas e Saúde Pública": "Bachelor's degree in Clinical Analysis and Public Health",
-  "Formação em análise de amostras biológicas e saúde pública, com estudo das técnicas e dos métodos utilizados no diagnóstico laboratorial.": "Training in the analysis of biological samples and public health, including the techniques and methods used in laboratory diagnosis.",
+  "Formação científica e prática em Bioquímica, Hematologia, Microbiologia e outras áreas das Análises Clínicas, complementada por conhecimentos de controlo da qualidade, segurança alimentar e saúde ambiental.": "Scientific and practical training in biochemistry, haematology, microbiology and other areas of clinical laboratory science, complemented by knowledge of quality control, food safety and environmental health.",
   "Experiência profissional": "Work experience",
   "SETEMBRO DE 2015 — PRESENTE": "SEPTEMBER 2015 — PRESENT",
   "Técnica de Análises Clínicas e Saúde Pública": "Clinical Analysis and Public Health Technician",
