@@ -1,5 +1,10 @@
 'use strict';
 const english = {
+"Disponível para oportunidades em part-time e aberta a propostas em full-time.": "Available for part-time opportunities and open to full-time offers.",
+"Procuro uma oportunidade profissional em informática, numa função júnior ou num estágio, onde possa aplicar o que aprendi e crescer com uma equipa.": "I am looking for a professional opportunity in IT, in a junior role or an internship, where I can put what I have learned into practice and grow with a team.",
+"Tenho preferência por um regime de part-time, que me permita conciliar esta nova etapa com o meu trabalho por turnos em Análises Clínicas. Estou também aberta a propostas em full-time, dependendo das condições e da oportunidade de desenvolvimento profissional.": "I prefer a part-time role that I can combine with my shifts in clinical laboratory work. I am also open to full-time offers, depending on the conditions and opportunities for professional growth.",
+"Quero contribuir para projetos reais e continuar a aprender. Mais do que escolher já uma área, quero uma oportunidade para começar e crescer.": "I want to contribute to real projects and keep learning. Rather than choosing a specific area right now, I want an opportunity to get started and grow.",
+
 "Procuro uma oportunidade em part-time ou compatível com o meu trabalho por turnos.": "Looking for a part-time opportunity or one that fits around my shift work.",
 "Procuro a minha primeira oportunidade profissional em informática, numa função júnior ou num estágio, que consiga conciliar com o meu trabalho por turnos em Análises Clínicas.": "I am looking for my first professional opportunity in IT, in a junior role or an internship that I can combine with my shifts in clinical laboratory work.",
 "Quero pôr em prática o que aprendi, contribuir para projetos reais e continuar a aprender com uma equipa. Mais do que escolher já uma área, quero uma oportunidade para começar e crescer.": "I want to put what I have learned into practice, contribute to real projects and keep learning with a team. Rather than choosing a specific area right now, I want an opportunity to get started and grow.",
