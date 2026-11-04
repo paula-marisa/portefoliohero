@@ -219,3 +219,6 @@ html[data-theme=light] .contact-string .cord-body{stroke:#648b9e}
 @media(max-width:700px){.contact-invite{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:24px;row-gap:20px;max-width:450px;margin:24px auto;padding:18px 8px 6px}.contact .contact-cta{min-height:72px;padding:17px 10px;grid-template-columns:27px minmax(0,1fr) 27px;gap:0}.contact-cta-copy{font-size:12px;letter-spacing:.65px}.contact-cta-arrow{flex-basis:27px;width:27px;height:27px}.contact-invite-note{font-size:11px}.contact-hand-real{margin-top:14px}}
 @media(max-width:380px){.contact-invite{column-gap:17px;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}.contact-cta-copy{font-size:11px;letter-spacing:.4px}.contact .contact-cta{padding-inline:8px;grid-template-columns:24px minmax(0,1fr) 24px}.contact-cta-arrow{flex-basis:24px;width:24px;height:24px}}
 @media(prefers-reduced-motion:reduce){.contact-hand-real,.contact-button-wrap{transform:none!important;will-change:auto}.contact .contact-cta,.contact-cta-arrow{transition:none}}
+
+/* English names and terms are italic only in Portuguese copy. */
+html[lang^="pt"] .foreign-term{font-style:italic}
