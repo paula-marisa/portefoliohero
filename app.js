@@ -301,12 +301,12 @@ function formatForeignTerms() {
     const text = node.nodeValue;
     const matches = [...text.matchAll(foreignTermPattern)];
     if (!matches.length) return;
-    const wrapper = document.createElement('span');
+    const wrapper = document.createElement('foreign-text');
     wrapper.className = 'foreign-text';
     let cursor = 0;
     matches.forEach(match => {
       wrapper.append(document.createTextNode(text.slice(cursor, match.index)));
-      const term = document.createElement('span');
+      const term = document.createElement('i');
       term.className = 'foreign-term';
       term.lang = 'en';
       term.textContent = match[0];
