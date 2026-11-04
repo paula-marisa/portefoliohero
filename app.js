@@ -278,6 +278,47 @@ const english = {
   "Falar comigo por email": "Email me"
 };
 let language = 'pt';
+
+// Preserve original text nodes so switching languages always restores the full translation.
+const foreignTextWrappers = [];
+const foreignTerms = ["Knowledge Check: Get Started with Databricks for Data Engineering","Get Started with Lakehouse Architecture on Databricks","Data Management and Governance with Unity Catalog","Databricks Streaming and Delta Live Tables","DevOps Essentials for Data Engineering","Databricks Fundamentals Accreditation","Data Ingestion with Lakeflow Connect","Network Technician Career Path Exam","Deploy Workloads with Lakeflow Jobs","Build Data Pipelines with DLT","Collaboration & Marketplace","Data Engineering Challenge","Introduction to Modern AI","Databricks Data Privacy","Google Cloud Storage","Associate Developer","Hands On Essentials","Learn Fundamentals","Data Applications","Mascot Assistant","Jupyter Notebook","Data Engineering","REStart Project","Health Insights","First Portfolio","Apache Airflow","Data Warehouse","Unity Catalog","FL_Dashboard","Tailwind CSS","Data Science","hello world","weather_app","dashboards","full stack","RobDroneGo","Databricks","TypeScript","JavaScript","OutSystems","part-time","full-time","bootcamps","dashboard","pipelines","streaming","workshops","Snowflake","Streamlit","Lakehouse","Data Lake","bootcamp","pipeline","frontend","workshop","LinkedIn","Firebase","Electron","backend","Node.js","Angular","MongoDB","ECharts","Next.js","Seaborn","Flutter","design","GitHub","Prolog","Python","Pandas","Docker","Pytest","Flower","Vercel","Plotly","DevOps","React","Scrum",".NET","Dart","web","dbt"];
+const foreignTermPattern = new RegExp('(?<![A-Za-z0-9_])(' + foreignTerms.map(term => term.replace(/[^a-zA-Z0-9 -]/g, char => '\\' + char)).join('|') + ')(?![A-Za-z0-9_])', 'gi');
+function clearForeignTermFormatting() {
+  foreignTextWrappers.splice(0).forEach(({wrapper, node}) => {
+    if (wrapper.isConnected) wrapper.replaceWith(node);
+  });
+}
+function formatForeignTerms() {
+  clearForeignTermFormatting();
+  if (language !== 'pt') return;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    if (!node.parentElement?.closest('script, style, code, pre, textarea, .foreign-text')) nodes.push(node);
+  }
+  nodes.forEach(node => {
+    const text = node.nodeValue;
+    const matches = [...text.matchAll(foreignTermPattern)];
+    if (!matches.length) return;
+    const wrapper = document.createElement('span');
+    wrapper.className = 'foreign-text';
+    let cursor = 0;
+    matches.forEach(match => {
+      wrapper.append(document.createTextNode(text.slice(cursor, match.index)));
+      const term = document.createElement('span');
+      term.className = 'foreign-term';
+      term.lang = 'en';
+      term.textContent = match[0];
+      wrapper.append(term);
+      cursor = match.index + match[0].length;
+    });
+    wrapper.append(document.createTextNode(text.slice(cursor)));
+    node.replaceWith(wrapper);
+    foreignTextWrappers.push({wrapper, node});
+  });
+}
+
 function translate(text) { return language === 'en' ? (english[text] ?? text) : text; }
 function projectCountText(count) { return language === 'en' ? `${count} ${count === 1 ? 'project' : 'projects'}` : `${count} ${count === 1 ? 'projeto' : 'projetos'}`; }
 const scene = document.querySelector('#scene');
@@ -372,6 +413,7 @@ const projectDialog = document.querySelector('#project-dialog');
 let lastProjectTrigger;
 const projectStories = [["Gerir uma frota de robôs e drones e organizar os pedidos de tarefas num protótipo académico.","Um sistema com gestão de dispositivos, pedidos de tarefas e planeamento. Alguns módulos foram desenvolvidos parcialmente.","A ligação entre diferentes módulos e tecnologias, desde a interface à lógica de execução."],["Apresentar os resultados de um sistema de aprendizagem federada de forma clara.","Um dashboard académico para visualizar métricas e comparar os nós participantes.","A relação entre comunicação, visualização e organização da informação numa aplicação."],["Criar um espaço pessoal para apresentar o meu percurso e os meus projetos.","Um portefólio com vários idiomas, formulário e integração com Firebase, publicado na Vercel.","A ligação entre apresentação, interação e publicação de uma aplicação web."],["Explorar uma mascote digital capaz de responder às ações do utilizador.","Uma aplicação em fase inicial com Electron, JavaScript e Node.js.","Eventos DOM e gestão de estado através de uma experiência lúdica."],["Explorar um conjunto público de dados de comércio eletrónico num desafio técnico.","Um projeto em Python com limpeza, modelação, análise exploratória, dashboards e modelos preditivos.","As diferentes etapas de preparação e análise da informação e a sua apresentação visual."],["Criar uma aplicação móvel simples para consultar o estado do tempo.","Uma aplicação em Flutter que apresenta a temperatura e as condições meteorológicas.","O desenvolvimento de interfaces móveis com Flutter e Dart, num projeto em fase inicial."],["Preparar dados financeiros de um conjunto público através de um fluxo organizado e repetível.","Uma pipeline ETL modular com transformação, validação, relatórios, testes Pytest, Apache Airflow e integração com Google Cloud Storage.","A organização do código em módulos, os testes e o acompanhamento das execuções num projeto de bootcamp."],["Organizar dados públicos de nascimentos para explorar indicadores de saúde pública.","Um fluxo de ingestão e transformação com Python, Snowflake e dbt, um modelo dimensional, testes de qualidade e um dashboard Streamlit.","A ligação entre fontes públicas, modelação, qualidade e apresentação da informação, num projeto de aprendizagem."]];
 function openProject(card, trigger) {
+  clearForeignTermFormatting();
   const image = card.querySelector('img');
   document.querySelector('#dialog-title').textContent = card.querySelector('h3').textContent;
   document.querySelector('#dialog-category').textContent = card.querySelector('.project-meta').textContent;
@@ -397,6 +439,7 @@ function openProject(card, trigger) {
   lastProjectTrigger = trigger;
   if (!projectDialog.open) projectDialog.showModal();
   document.body.classList.add('dialog-open');
+  formatForeignTerms();
 }
 projectCards.forEach(card => {
   const button = card.querySelector('.project-detail');
@@ -468,6 +511,7 @@ document.querySelectorAll('[aria-label], [title], [alt], meta[content]').forEach
   });
 });
 function setLanguage(nextLanguage, rememberChoice = true) {
+  clearForeignTermFormatting();
   language = nextLanguage === 'en' ? 'en' : 'pt';
   document.documentElement.lang = language === 'en' ? 'en' : 'pt-PT';
   translatedTextNodes.forEach(({node, original, key}) => {
@@ -484,6 +528,7 @@ function setLanguage(nextLanguage, rememberChoice = true) {
     const card = lastProjectTrigger.closest('.project');
     if (card) openProject(card, lastProjectTrigger);
   }
+  formatForeignTerms();
   if (rememberChoice) {
     try { localStorage.setItem('paula-language', language); } catch {}
   }
