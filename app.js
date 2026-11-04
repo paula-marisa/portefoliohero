@@ -107,7 +107,7 @@ const english = {
   "liga diferentes mundos.": "connects different worlds.",
   "Formação académica": "Education",
   "Licenciatura em Engenharia Informática": "Bachelor's degree in Computer Engineering",
-  "Formação em conceção, desenvolvimento e manutenção de sistemas informáticos, incluindo programação, bases de dados, redes e segurança.": "Training in the design, development and maintenance of computer systems, including programming, databases, networks and security.",
+  "Formação científica e prática em desenvolvimento de software, sistemas de informação, bases de dados, redes, segurança e inteligência artificial, com aplicação dos conhecimentos em projetos e na resolução de problemas em equipa.": "Scientific and practical training in software development, information systems, databases, networks, security and artificial intelligence, applying this knowledge through projects and team-based problem solving.",
   "Licenciatura em Análises Clínicas e Saúde Pública": "Bachelor's degree in Clinical Analysis and Public Health",
   "Formação científica e prática em Bioquímica, Hematologia, Microbiologia e outras áreas das Análises Clínicas, complementada por conhecimentos de controlo da qualidade, segurança alimentar e saúde ambiental.": "Scientific and practical training in biochemistry, haematology, microbiology and other areas of clinical laboratory science, complemented by knowledge of quality control, food safety and environmental health.",
   "Experiência profissional": "Work experience",
