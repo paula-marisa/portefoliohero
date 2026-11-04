@@ -223,7 +223,7 @@ const english = {
   "O meu percurso continua a ganhar forma. A curiosidade é o ponto de partida.": "My path is still taking shape. Curiosity is where it starts.",
   "Um caminho feito": "A path shaped",
   "de descobertas.": "by discovery.",
-  "Saúde, informática e aprendizagem.": "Health, computing and learning.",
+  "Saúde e informática: duas áreas que fazem parte de mim.": "Healthcare and computing: two fields that are part of who I am.",
   "Trago comigo o que aprendi e a vontade de continuar a descobrir.": "I bring what I have learned and a desire to keep discovering.",
   "FORMAÇÃO ACADÉMICA": "EDUCATION",
   "EXPERIÊNCIA PROFISSIONAL": "WORK EXPERIENCE",
