@@ -224,7 +224,7 @@ const english = {
   "Um caminho feito": "A path shaped",
   "de descobertas.": "by discovery.",
   "Saúde, informática e aprendizagem.": "Health, computing and learning.",
-  "Cada etapa acrescenta uma nova perspetiva.": "Each step brings a new perspective.",
+  "Trago comigo o que aprendi e a vontade de continuar a descobrir.": "I bring what I have learned and a desire to keep discovering.",
   "FORMAÇÃO ACADÉMICA": "EDUCATION",
   "EXPERIÊNCIA PROFISSIONAL": "WORK EXPERIENCE",
   "APRENDIZAGEM CONTÍNUA": "KEEP LEARNING",
