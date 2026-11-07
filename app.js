@@ -84,7 +84,7 @@ const english = {
 "Formação modular": "Modular training",
 "Planeamento de eventos, organização de equipas e elaboração de orçamentos.": "Event planning, team organisation and budgeting.",
 
-"Colheita de produtos biológicos, preparação e processamento das amostras.": "Collection of biological specimens and preparation and processing of samples.",
+"Colheita de produtos biológicos, preparação e processamento das amostras.": "Collection, preparation and processing of biological samples.",
 "Avaliação dos controlos da qualidade dos equipamentos antes do processamento das amostras.": "Evaluating equipment quality controls before processing samples.",
 "Processamento de análises nas áreas de Química Clínica, Hematologia, Microbiologia e Imuno-hemoterapia, de acordo com os procedimentos e critérios de qualidade de cada laboratório.": "Processing tests in clinical chemistry, haematology, microbiology and transfusion testing, following each laboratory's procedures and quality criteria.",
 "Validação dos resultados de Química Clínica na unidade de Vila Real.": "Validation of clinical chemistry results at the Vila Real unit.",
