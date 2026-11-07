@@ -265,3 +265,28 @@ html[data-theme="light"] .training-domain[data-domain="Ambas"]{color:#3d5672;bor
 html[data-theme="light"] .training-domain{border-color:#9db8c5}
 @media(max-width:760px){.training-section{margin:36px 0 44px}.training-intro{grid-template-columns:1fr;gap:14px;margin-bottom:26px}.training-intro>p{max-width:none;font-size:13px}.training-grid{grid-template-columns:1fr;gap:12px}.training-year{margin-bottom:28px}.training-entry{padding:20px}.training-entry-top{gap:8px}.training-entry h4{font-size:17px}.training-modules summary{min-height:34px}.training-more>summary{width:100%;text-align:center}.training-intro h3{letter-spacing:-.5px}.training-entry-compact{padding:18px}.training-date{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.training-more>summary,.training-archive>summary{transition:none}}
+
+/* Compact year stops stay on the original footprint trail. */
+.journey-training-card .training-card-year{font-size:15px;letter-spacing:1px;margin-bottom:10px}
+.journey-training-card h3{font-size:19px;line-height:1.4;margin:0 0 13px;letter-spacing:-.25px}
+.journey-training-card .training-highlights{list-style:none;padding:0;margin:0 0 14px}
+.journey-training-card .training-highlights>li{font-size:12px;line-height:1.7;margin:5px 0;padding-left:13px;position:relative;color:var(--muted)}
+.journey-training-card .training-highlights>li::before{content:"";position:absolute;width:4px;height:4px;border-radius:50%;background:var(--accent);left:0;top:.7em;opacity:.75}
+.journey-training-card>.training-card-details{border-top:1px solid var(--line);padding-top:10px}
+.journey-training-card>.training-card-details>summary{font-size:12px;min-height:34px;line-height:1.8;display:list-item;color:var(--accent);cursor:pointer}
+.training-card-content{padding-top:16px;min-width:0}
+.journey-training-card .training-grid{grid-template-columns:1fr;gap:10px}
+.journey-training-card .training-year{margin-bottom:22px}
+.journey-training-card .training-year:last-child{margin-bottom:0}
+.journey-training-card .training-year-heading h3{font-size:17px;margin:0}
+.journey-training-card .training-entry{padding:15px;border-radius:9px;background:transparent}
+.journey-training-card .training-entry h4{font-size:14px;line-height:1.5;margin:0 0 6px}
+.journey-training-card .training-entry p{font-size:12px;margin:0;line-height:1.7}
+.journey-training-card .training-entry .training-kind{font-size:10px;margin-top:3px}
+.journey-training-card .training-entry .training-description{margin-top:8px}
+.journey-training-card .training-entry-top{gap:6px;margin-bottom:9px}
+.journey-training-card .training-date{font-size:10px}
+.journey-training-card .training-more>summary{font-size:11px;width:100%;text-align:left;min-height:38px;padding:9px 12px}
+.journey-training-card .training-modules ul{margin:10px 0 0;padding-left:16px}
+.journey-training-card .training-modules li{font-size:11px;line-height:1.7;margin:4px 0}
+@media(max-width:760px){.journey-training-card h3{font-size:18px}.journey-training-card .training-highlights>li{font-size:12px}.journey-training-card .training-entry{padding:13px}.journey-training-card .training-entry-top{flex-wrap:wrap}.journey-training-card>.training-card-details>summary{min-height:38px}}
