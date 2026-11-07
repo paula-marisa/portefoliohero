@@ -1,8 +1,8 @@
 'use strict';
 const english = {
 "Colheita de produtos biológicos, preparação e processamento das amostras.": "Collection of biological specimens and preparation and processing of samples.",
-"Realização e avaliação do controlo da qualidade dos equipamentos, antes de iniciar o processamento das amostras.": "Performing and assessing equipment quality control before processing samples.",
-"Realização de análises nas áreas de Química Clínica, Hematologia, Microbiologia e Imuno-hemoterapia, de acordo com os procedimentos e critérios de qualidade de cada laboratório.": "Performing tests in clinical chemistry, haematology, microbiology and transfusion testing, following each laboratory's procedures and quality criteria.",
+"Processamento e avaliação dos controlos da qualidade dos equipamentos, antes de iniciar o processamento das amostras.": "Processing and evaluating equipment quality controls before processing samples.",
+"Processamento de análises nas áreas de Química Clínica, Hematologia, Microbiologia e Imuno-hemoterapia, de acordo com os procedimentos e critérios de qualidade de cada laboratório.": "Processing tests in clinical chemistry, haematology, microbiology and transfusion testing, following each laboratory's procedures and quality criteria.",
 "Validação dos resultados de Química Clínica na unidade de Vila Real.": "Validation of clinical chemistry results at the Vila Real unit.",
 "Orientação e acompanhamento de estagiários.": "Guiding and supporting trainees.",
 "Gestora do processo «Gestão das Compras» do Corelab, entre 2016 e 2023, com responsabilidade pelas encomendas e pela gestão de existências, no âmbito do Sistema de Gestão da Qualidade.": "Manager of the Corelab purchasing process from 2016 to 2023, responsible for orders and stock management within the Quality Management System.",
