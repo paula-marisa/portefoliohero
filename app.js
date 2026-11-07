@@ -1,5 +1,67 @@
 'use strict';
 const english = {
+"APRENDIZAGEM CONTÍNUA": "ONGOING LEARNING",
+"Formações que fazem parte do meu caminho.": "Training that is part of my journey.",
+"Uma seleção de cursos, certificações e experiências em saúde e informática.": "A selection of courses, certifications and experiences in healthcare and computing.",
+"Saúde": "Healthcare",
+"Segurança do Doente na Prestação de Cuidados Hospitalares": "Patient Safety in Hospital Care",
+"Curso de formação": "Training course",
+"Análise de situações clínicas e de medidas para melhorar a segurança dos cuidados.": "Review of clinical situations and measures to improve patient safety.",
+"Ambas": "Both fields",
+"A Investigação Clínica e a Proteção de Dados Pessoais": "Clinical Research and Personal Data Protection",
+"Proteção, segurança e confidencialidade dos dados pessoais utilizados na investigação clínica.": "Protection, security and confidentiality of personal data used in clinical research.",
+"Cuidar da saúde digital: Cibersegurança para profissionais da saúde": "Digital Healthcare: Cybersecurity for Healthcare Professionals",
+"Formação em cibersegurança aplicada ao contexto da saúde.": "Cybersecurity training for healthcare settings.",
+"Informática": "Computing",
+"[RE]Start: Dados Além da Técnica — Engenharia de Dados": "[RE]Start: Beyond Technical Skills — Data Engineering",
+"Formação prática em engenharia de dados, com aplicação num projeto em equipa.": "Practical data engineering training, applied in a team project.",
+"Formação Cisco Networking Academy": "Cisco Networking Academy Training",
+"Certificados de conclusão": "Course completion certificates",
+"Formação em redes e fundamentos de inteligência artificial.": "Training in networking and the fundamentals of artificial intelligence.",
+"Ver conteúdos": "View content",
+"Ver outras formações de 2026": "View more training from 2026",
+"Suporte Básico de Vida com DAE": "Basic Life Support with AED",
+"VI Congresso de Gestão em Saúde": "6th Healthcare Management Congress",
+"Participação em congresso": "Congress participation",
+"Formação e avaliação": "Training and assessment",
+"Webinário": "Webinar",
+"Associate Developer — O11 e ODC": "Associate Developer — O11 and ODC",
+"Certificações": "Certifications",
+"Duas certificações em desenvolvimento de aplicações nas plataformas O11 e ODC.": "Two certifications in application development on the O11 and ODC platforms.",
+"Bootcamp de Engenharia de Dados e DataOps": "Data Engineering and DataOps Bootcamp",
+"Formação prática em engenharia de dados e DataOps.": "Practical training in data engineering and DataOps.",
+"Formação Databricks": "Databricks Training",
+"Percurso de formação": "Training pathway",
+"Fundamentos, arquitetura, ingestão de dados, governação e desenvolvimento de fluxos de processamento.": "Fundamentals, architecture, data ingestion, governance and processing workflows.",
+"Workshops práticos com badges": "Hands-on workshops with badges",
+"Seis workshops com exercícios práticos avaliados na plataforma Snowflake.": "Six workshops with assessed practical exercises on the Snowflake platform.",
+"Formação em equipamento": "Equipment training",
+"Formação no sistema BioFire Torch, realizada na ULSTMAD.": "Training on the BioFire Torch system at ULSTMAD.",
+"Ver outras formações de 2025": "View more training from 2025",
+"Programa de Mentoria — 7.ª edição": "Mentoring Programme — 7th Edition",
+"Participação como mentoranda": "Participation as a mentee",
+"Certificação": "Certification",
+"Simpósio de Engenharia Informática SEI’24": "SEI’24 Computer Engineering Symposium",
+"Participação em simpósio": "Symposium participation",
+"Palestra": "Talk",
+"IV Congresso de Gestão em Saúde": "4th Healthcare Management Congress",
+"Ver outras formações de 2024": "View more training from 2024",
+"Participação em atividade formativa": "Training activity participation",
+"Gestão em Saúde": "Healthcare Management",
+"Explorar formações anteriores a 2023": "Explore training before 2023",
+"Utilização do equipamento, análise de resultados, resolução de incidências e manutenção.": "Equipment operation, result analysis, troubleshooting and maintenance.",
+"Gestão do Stress e Trabalho em Equipa": "Stress Management and Teamwork",
+"Simpósio de Engenharia Informática SEI’21": "SEI’21 Computer Engineering Symposium",
+"RGPD para Cidadãos Atentos": "GDPR for Informed Citizens",
+"InterQC.NET — Nova Aplicação": "InterQC.NET — New Application",
+"Formação em aplicação de controlo da qualidade": "Quality control application training",
+"Sistema HST e Validação EPU": "HST System and EPU Validation",
+"Formação em equipamento e sistema de validação": "Equipment and validation system training",
+"Sistemas HST, XE-5000, TS-500, SP1000i e Validação EPU.": "HST, XE-5000, TS-500, SP1000i and EPU validation systems.",
+"Organização de Eventos": "Event Organisation",
+"Formação modular": "Modular training",
+"Planeamento de eventos, organização de equipas e elaboração de orçamentos.": "Event planning, team organisation and budgeting.",
+
 "Colheita de produtos biológicos, preparação e processamento das amostras.": "Collection of biological specimens and preparation and processing of samples.",
 "Processamento e avaliação dos controlos da qualidade dos equipamentos, antes de iniciar o processamento das amostras.": "Processing and evaluating equipment quality controls before processing samples.",
 "Processamento de análises nas áreas de Química Clínica, Hematologia, Microbiologia e Imuno-hemoterapia, de acordo com os procedimentos e critérios de qualidade de cada laboratório.": "Processing tests in clinical chemistry, haematology, microbiology and transfusion testing, following each laboratory's procedures and quality criteria.",
@@ -288,7 +350,7 @@ let language = 'pt';
 
 // Preserve original text nodes so switching languages always restores the full translation.
 const foreignTextWrappers = [];
-const foreignTerms = ["software","hardware","email","stocks","stock","online","Corelab","Knowledge Check: Get Started with Databricks for Data Engineering","Get Started with Lakehouse Architecture on Databricks","Data Management and Governance with Unity Catalog","Databricks Streaming and Delta Live Tables","DevOps Essentials for Data Engineering","Databricks Fundamentals Accreditation","Data Ingestion with Lakeflow Connect","Network Technician Career Path Exam","Deploy Workloads with Lakeflow Jobs","Build Data Pipelines with DLT","Collaboration & Marketplace","Data Engineering Challenge","Introduction to Modern AI","Databricks Data Privacy","Google Cloud Storage","Associate Developer","Hands On Essentials","Learn Fundamentals","Data Applications","Mascot Assistant","Jupyter Notebook","Data Engineering","REStart Project","Health Insights","First Portfolio","Apache Airflow","Data Warehouse","Unity Catalog","FL_Dashboard","Tailwind CSS","Data Science","hello world","weather_app","dashboards","full stack","RobDroneGo","Databricks","TypeScript","JavaScript","OutSystems","part-time","full-time","bootcamps","dashboard","pipelines","streaming","workshops","Snowflake","Streamlit","Lakehouse","Data Lake","bootcamp","pipeline","frontend","workshop","LinkedIn","Firebase","Electron","backend","Node.js","Angular","MongoDB","ECharts","Next.js","Seaborn","Flutter","design","GitHub","Prolog","Python","Pandas","Docker","Pytest","Flower","Vercel","Plotly","DevOps","React","Scrum",".NET","Dart","web","dbt"];
+const foreignTerms = ["Towards Reliable Distributed Edge-Cloud Applications","Cisco Networking Academy","Network Technician Career Path Exam","Introduction to Modern AI","Hands-On Essentials","Scrum Fundamentals Certified","Geek Girls Portugal","XN-9100 S&A / Extended-IPU","BioFire Torch","DataOps","badges","badge","CellMasters","software","hardware","email","stocks","stock","online","Corelab","Knowledge Check: Get Started with Databricks for Data Engineering","Get Started with Lakehouse Architecture on Databricks","Data Management and Governance with Unity Catalog","Databricks Streaming and Delta Live Tables","DevOps Essentials for Data Engineering","Databricks Fundamentals Accreditation","Data Ingestion with Lakeflow Connect","Network Technician Career Path Exam","Deploy Workloads with Lakeflow Jobs","Build Data Pipelines with DLT","Collaboration & Marketplace","Data Engineering Challenge","Introduction to Modern AI","Databricks Data Privacy","Google Cloud Storage","Associate Developer","Hands On Essentials","Learn Fundamentals","Data Applications","Mascot Assistant","Jupyter Notebook","Data Engineering","REStart Project","Health Insights","First Portfolio","Apache Airflow","Data Warehouse","Unity Catalog","FL_Dashboard","Tailwind CSS","Data Science","hello world","weather_app","dashboards","full stack","RobDroneGo","Databricks","TypeScript","JavaScript","OutSystems","part-time","full-time","bootcamps","dashboard","pipelines","streaming","workshops","Snowflake","Streamlit","Lakehouse","Data Lake","bootcamp","pipeline","frontend","workshop","LinkedIn","Firebase","Electron","backend","Node.js","Angular","MongoDB","ECharts","Next.js","Seaborn","Flutter","design","GitHub","Prolog","Python","Pandas","Docker","Pytest","Flower","Vercel","Plotly","DevOps","React","Scrum",".NET","Dart","web","dbt"];
 const foreignTermPattern = new RegExp('(?<![A-Za-z0-9_])(' + foreignTerms.map(term => term.replace(/[^a-zA-Z0-9 -]/g, char => '\\' + char)).join('|') + ')(?![A-Za-z0-9_])', 'gi');
 function clearForeignTermFormatting() {
   foreignTextWrappers.splice(0).forEach(({wrapper, node}) => {
@@ -725,3 +787,4 @@ if (contactInvite) {
   reducedMotion.addEventListener('change',()=>{stopInvitation();clearTimeout(touchTimer);reset();resumeInvitation();});
   schedule();
 }
+
