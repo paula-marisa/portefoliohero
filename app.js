@@ -1,5 +1,12 @@
 'use strict';
 const english = {
+"Colheita de produtos biológicos, preparação e processamento das amostras.": "Collection of biological specimens and preparation and processing of samples.",
+"Realização e avaliação do controlo da qualidade dos equipamentos, antes de iniciar o processamento das amostras.": "Performing and assessing equipment quality control before processing samples.",
+"Realização de análises nas áreas de Química Clínica, Hematologia, Microbiologia e Imuno-hemoterapia, de acordo com os procedimentos e critérios de qualidade de cada laboratório.": "Performing tests in clinical chemistry, haematology, microbiology and transfusion testing, following each laboratory's procedures and quality criteria.",
+"Validação dos resultados de Química Clínica na unidade de Vila Real.": "Validation of clinical chemistry results at the Vila Real unit.",
+"Orientação e acompanhamento de estagiários.": "Guiding and supporting trainees.",
+"Gestora do processo «Gestão das Compras» do Corelab, entre 2016 e 2023, com responsabilidade pelas encomendas e pela gestão de existências, no âmbito do Sistema de Gestão da Qualidade.": "Manager of the Corelab purchasing process from 2016 to 2023, responsible for orders and stock management within the Quality Management System.",
+
 "Disponível para oportunidades em part-time e aberta a propostas em full-time.": "Available for part-time opportunities and open to full-time offers.",
 "Procuro uma oportunidade profissional em informática, numa função júnior ou num estágio, onde possa aplicar o que aprendi e crescer com uma equipa.": "I am looking for a professional opportunity in IT, in a junior role or an internship, where I can put what I have learned into practice and grow with a team.",
 "Tenho preferência por um regime de part-time, que me permita conciliar esta nova etapa com o meu trabalho por turnos em Análises Clínicas. Estou também aberta a propostas em full-time, dependendo das condições e da oportunidade de desenvolvimento profissional.": "I prefer a part-time role that I can combine with my shifts in clinical laboratory work. I am also open to full-time offers, depending on the conditions and opportunities for professional growth.",
