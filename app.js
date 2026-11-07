@@ -313,7 +313,7 @@ const english = {
   "Um caminho feito": "A path shaped",
   "de descobertas.": "by discovery.",
   "Saúde e informática: duas áreas que fazem parte de mim.": "Healthcare and computing: two fields that are part of who I am.",
-  "Trago comigo o que aprendi e a vontade de continuar a descobrir.": "I bring what I have learned and a desire to keep discovering.",
+  "Trago comigo o que aprendi e a vontade de ir mais longe.": "I bring what I have learned and the drive to go further.",
   "FORMAÇÃO ACADÉMICA": "EDUCATION",
   "EXPERIÊNCIA PROFISSIONAL": "WORK EXPERIENCE",
   "APRENDIZAGEM CONTÍNUA": "KEEP LEARNING",
