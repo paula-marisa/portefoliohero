@@ -290,3 +290,5 @@ html[data-theme="light"] .training-domain{border-color:#9db8c5}
 .journey-training-card .training-modules ul{margin:10px 0 0;padding-left:16px}
 .journey-training-card .training-modules li{font-size:11px;line-height:1.7;margin:4px 0}
 @media(max-width:760px){.journey-training-card h3{font-size:18px}.journey-training-card .training-highlights>li{font-size:12px}.journey-training-card .training-entry{padding:13px}.journey-training-card .training-entry-top{flex-wrap:wrap}.journey-training-card>.training-card-details>summary{min-height:38px}}
+
+.training-selection-note{max-width:620px;margin:22px auto 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.8;padding:0 12px}
