@@ -1,5 +1,6 @@
 'use strict';
 const english = {
+"Uma seleção das formações que complementam o meu percurso em saúde e informática.": "A selection of training courses that complement my background in healthcare and computing.",
   "FORMAÇÃO CONTÍNUA": "CONTINUING EDUCATION",
 
 "2026": "2026",
