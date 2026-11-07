@@ -1,6 +1,7 @@
 'use strict';
 const english = {
-"FORMAÇÕES SELECIONADAS": "SELECTED TRAINING",
+  "APRENDIZAGEM CONTÍNUA": "CONTINUOUS LEARNING",
+
 "2026": "2026",
 "Saúde, informática e qualidade.": "Healthcare, computing and quality.",
 "Cibersegurança na saúde · SPMS": "Cybersecurity in healthcare · SPMS",
@@ -20,7 +21,6 @@ const english = {
 "Eventos de informática e trabalho em equipa": "Computing events and teamwork",
 "Ver outras formações": "View other training",
 
-"APRENDIZAGEM CONTÍNUA": "ONGOING LEARNING",
 "Formações que fazem parte do meu caminho.": "Training that is part of my journey.",
 "Uma seleção de cursos, certificações e experiências em saúde e informática.": "A selection of courses, certifications and experiences in healthcare and computing.",
 "Saúde": "Healthcare",
@@ -316,7 +316,7 @@ const english = {
   "Trago comigo o que aprendi e a vontade de ir mais longe.": "I bring what I have learned and the drive to go further.",
   "FORMAÇÃO ACADÉMICA": "EDUCATION",
   "EXPERIÊNCIA PROFISSIONAL": "WORK EXPERIENCE",
-  "APRENDIZAGEM CONTÍNUA": "KEEP LEARNING",
+
   "Cursos, certificações e encontros que me ajudam a explorar diferentes áreas da informática.": "Courses, certificates and events that help me explore different areas of computing.",
   "O caminho continua, com espaço para novas experiências.": "The path continues, with room for new experiences.",
   "Os primeiros passos de um percurso que continua a crescer.": "The first steps of a journey that keeps growing.",
