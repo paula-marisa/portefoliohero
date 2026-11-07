@@ -1,6 +1,6 @@
 'use strict';
 const english = {
-  "APRENDIZAGEM CONTÍNUA": "CONTINUOUS LEARNING",
+  "FORMAÇÃO CONTÍNUA": "CONTINUING EDUCATION",
 
 "2026": "2026",
 "Saúde, informática e qualidade.": "Healthcare, computing and quality.",
