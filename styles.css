@@ -292,3 +292,18 @@ html[data-theme="light"] .training-domain{border-color:#9db8c5}
 @media(max-width:760px){.journey-training-card h3{font-size:18px}.journey-training-card .training-highlights>li{font-size:12px}.journey-training-card .training-entry{padding:13px}.journey-training-card .training-entry-top{flex-wrap:wrap}.journey-training-card>.training-card-details>summary{min-height:38px}}
 
 .training-selection-note{max-width:620px;margin:22px auto 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.8;padding:0 12px}
+
+/* Readable training cards and compact professional experience. */
+.journey-training-card .training-highlights>li{font-size:13px;color:var(--text)}
+.journey-training-card>.training-card-details>summary{font-size:13px;min-height:40px}
+.journey-training-card .training-entry p{font-size:13px}
+.journey-training-card .training-date{font-size:11px}
+.journey-training-card .training-modules li{font-size:12px}
+.journey-training-card .training-more>summary{font-size:12px}
+.training-selection-note{font-size:13px}
+.journey-experience-details{border-top:1px solid var(--line);margin-top:18px;padding-top:12px}
+.journey-experience-details>summary{cursor:pointer;color:var(--accent);font-size:13px;line-height:1.8;min-height:40px}
+.journey-experience-details>summary:hover{text-decoration:underline;text-underline-offset:4px}
+.journey-experience-details>summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:3px}
+.journey-experience-details>ul{margin-top:10px}
+@media(max-width:760px){.journey-training-card .training-highlights>li{font-size:13px}}
