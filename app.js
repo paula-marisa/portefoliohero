@@ -188,7 +188,7 @@ const english = {
   "Interfaces e aplicações": "Interfaces and apps",
   "Lógica e integração": "Logic and integration",
   "JavaScript, TypeScript, React, Angular, Next.js, Tailwind CSS, Flutter e Dart.": "JavaScript, TypeScript, React, Angular, Next.js, Tailwind CSS, Flutter and Dart.",
-  "Node.js, .NET, MongoDB, Firebase e Electron.": "Node.js, .NET, MongoDB, Firebase and Electron.",
+  "Node.js, .NET, MongoDB e Firebase.": "Node.js, .NET, MongoDB and Firebase.",
   "Dados e visualização": "Data and visualisation",
   "Python, Pandas, Jupyter Notebook, Plotly, Seaborn e ECharts. Formação em Databricks, Snowflake e dbt.": "Python, Pandas, Jupyter Notebook, Plotly, Seaborn and ECharts. Training in Databricks, Snowflake and dbt.",
   "Idiomas": "Languages",
