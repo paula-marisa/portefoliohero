@@ -186,7 +186,7 @@ const english = {
   "aos dados.": "to data.",
   "Conhecimentos adquiridos ao longo da formação académica e através de projetos, que continuo a desenvolver e aprofundar.": "Knowledge gained through my academic studies and projects, which I continue to develop and deepen.",
   "Linguagens de programação": "Programming languages",
-  "Desenvolvimento de aplicações": "Application development",
+  "Desenvolvimento e ferramentas": "Development and tools",
   "Bases de dados e serviços": "Databases and services",
   "Engenharia de dados": "Data engineering",
   "Redes e segurança": "Networks and security",
