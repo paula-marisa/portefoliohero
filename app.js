@@ -184,7 +184,7 @@ const english = {
   "03 / COMPETÊNCIAS": "03 / SKILLS",
   "Da interface": "From interfaces",
   "aos dados.": "to data.",
-  "Tecnologias e ferramentas que tenho utilizado em projetos, explorado durante a formação e que continuo a aprofundar.": "Technologies and tools I have used in projects, explored during my studies and continue to develop my knowledge of.",
+  "Conhecimentos adquiridos ao longo da formação académica e através de projetos, que continuo a desenvolver e aprofundar.": "Knowledge gained through my academic studies and projects, which I continue to develop and deepen.",
   "Linguagens de programação": "Programming languages",
   "Desenvolvimento de aplicações": "Application development",
   "Bases de dados e serviços": "Databases and services",
